@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://osamaiqbalcs:KAWj4pCIivlzy8vr@cluster0.gxnc4pq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const DB_NAME = 'whatsapp_bot';
 let db;
 
