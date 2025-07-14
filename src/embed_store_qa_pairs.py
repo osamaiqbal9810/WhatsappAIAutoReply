@@ -46,7 +46,8 @@ schema = CollectionSchema(
         FieldSchema(name="id", dtype=DataType.VARCHAR, is_primary=True, auto_id=False, max_length=36),
         FieldSchema(name="question", dtype=DataType.VARCHAR, max_length=1024),
         FieldSchema(name="chunk", dtype=DataType.VARCHAR, max_length=4096),
-        FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=VECTOR_DIM)
+        FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=VECTOR_DIM),
+        FieldSchema(name="queryType", dtype=DataType.VARCHAR, max_length=256)
     ],
     description="WhatsApp QA chunks embedded by content"
 )
@@ -80,7 +81,8 @@ for pair in qa_pairs:
         embeddings.append(question_embedding)
 
 # --- Step 5: Insert into Milvus ---
-entities = [ids, questions, chunks, embeddings]
+query_types = ["support"] * len(ids)
+entities = [ids, questions, chunks, embeddings, query_types]
 collection.insert(entities)
 collection.flush()
 

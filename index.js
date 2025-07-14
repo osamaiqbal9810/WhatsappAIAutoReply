@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://osamaiqbalcs:KAWj4pCIivlzy8vr@cluster0.gxnc4pq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
 const DB_NAME = 'whatsapp_bot';
 let db;
 
@@ -45,14 +45,12 @@ async function getChatHistory(userId, messageId, limit = 5) {
 
         // Find the current message to get its timestamp
         let currentMessage = await collection.findOne({
-            userId: userId,
             whatsappMessageId: messageId
         });
 
         if (!currentMessage) {
-            console.log("!currentMessage")
+            console.log("!currentMessage", messageId, userId)
             currentMessage = await collection.findOne({
-                userId: userId,
                 whatsappReplyMessageId: messageId
             });
         }
@@ -183,6 +181,139 @@ async function sendAudioMessage(to, audioFilePath) {
     }
 }
 
+const subjectKeywords = {
+    'sbr': ['sbr', 'strategic business reporting'],
+    'fr(f7)': ['fr', 'f7', 'financial reporting']
+    // Add more subjects with variations
+};
+
+const imageKeywordMap = {
+    'sbr': [
+        { file: path.join(__dirname, 'images/sbr1.jpg'), caption: '' },
+        { file: path.join(__dirname, 'images/sbr2.jpg'), caption: '' },
+        { file: path.join(__dirname, 'images/sbr3.jpg'), caption: '' }
+    ],
+    'fr(f7)': [
+        { file: path.join(__dirname, 'images/fr(f7).jpg'), caption: '' }
+    ]
+};
+
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^\w\s]/gi, '') // remove punctuation
+        .split(/\s+/); // tokenize
+}
+
+async function hasImageBeenSent(userId, imageName) {
+    try {
+        const collection = db.collection('sentImages');
+        const result = await collection.findOne({ userId, imageName });
+        return result !== null;
+    } catch (error) {
+        console.error('Failed to check if image has been sent:', error);
+        return true; // Assume it has been sent to prevent spam
+    }
+}
+
+async function recordImageSent(userId, imageName) {
+    try {
+        const collection = db.collection('sentImages');
+        await collection.insertOne({ userId, imageName, timestamp: new Date() });
+        console.log(`Image sent record for ${userId} and image ${imageName} saved.`);
+    } catch (error) {
+        console.error('Failed to record image sent:', error);
+    }
+}
+
+async function checkAndSendKeywordImage(queryText, to) {
+    console.log("checkAndSendKeywordImage");
+    const tokens = normalizeText(queryText);
+    const tokenSet = new Set(tokens);
+    let imageSent = false;
+    let lastMessageId = null;
+
+    for (const subject in subjectKeywords) {
+        const aliases = subjectKeywords[subject];
+        const matched = aliases.some(alias => tokenSet.has(alias.toLowerCase()));
+
+        if (matched && imageKeywordMap[subject]) {
+            const images = imageKeywordMap[subject];
+
+            for (const image of images) {
+                const imageName = path.basename(image.file);
+                const alreadySent = await hasImageBeenSent(to, imageName);
+
+                if (!alreadySent) {
+                    console.log(`Sending image "${imageName}" for subject "${subject}" to ${to}`);
+                    const messageId = await sendImageMessage(to, image.file, image.caption);
+                    if (messageId) {
+                        await recordImageSent(to, imageName);
+                        imageSent = true;
+                        lastMessageId = messageId;
+                    }
+                } else {
+                    console.log(`Image "${imageName}" already sent to ${to}`);
+                }
+            }
+        }
+    }
+
+    return { sent: imageSent, messageId: lastMessageId };
+}
+
+
+async function sendImageMessage(to, imagePath, caption = '') {
+    try {
+        // 1. Upload the image
+        const FormData = require('form-data');
+        const form = new FormData();
+        form.append('file', fs.createReadStream(imagePath));
+        form.append('type', 'image/jpeg'); // or image/png depending on your image
+        form.append('messaging_product', 'whatsapp');
+
+        const uploadResponse = await axios.post(
+            `https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/media`,
+            form,
+            {
+                headers: {
+                    ...form.getHeaders(),
+                    'Authorization': `Bearer ${WHATSAPP_TOKEN}`,
+                },
+            }
+        );
+
+        const mediaId = uploadResponse.data.id;
+        console.log(`Image uploaded to WhatsApp, media ID: ${mediaId}`);
+
+        // 2. Send the image message
+        const messageResponse = await axios.post(
+            `https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/messages`,
+            {
+                messaging_product: 'whatsapp',
+                to: to,
+                type: 'image',
+                image: {
+                    id: mediaId,
+                    caption: caption
+                }
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${WHATSAPP_TOKEN}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+
+        console.log('Image message sent successfully.');
+        return messageResponse.data.messages[0].id;
+    } catch (error) {
+        console.error('Failed to send image message:', error.response ? error.response.data : error.message);
+        return null;
+    }
+}
+
 // Endpoint to handle incoming messages
 app.post('/webhook', async (req, res) => {
     // console.log('Received webhook:', JSON.stringify(req.body, null, 2));
@@ -230,7 +361,7 @@ app.post('/webhook', async (req, res) => {
                 console.log(`Audio downloaded to: ${tempAudioPath}`);
 
                 // 3. Transcribe audio
-                const transcribeProcess = spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
+                const transcribeProcess =  spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
                 let transcribedText = '';
                 transcribeProcess.stdout.on('data', (data) => {
                     transcribedText += data.toString().trim();
@@ -258,6 +389,8 @@ app.post('/webhook', async (req, res) => {
                     else console.log(`Deleted temp audio file: ${tempAudioPath}`);
                 });
 
+               
+
             } catch (error) {
                 console.error('Error processing audio message:', error);
                 await sendTextMessage(from, "Sorry, I had trouble processing your audio message.");
@@ -276,6 +409,8 @@ app.post('/webhook', async (req, res) => {
             res.sendStatus(200);
             return;
         }
+
+         const imageSent = await checkAndSendKeywordImage(queryText, from);
 
         // --- AI Logic using Milvus ---
         let chatHistoryContextMessages = []
@@ -299,7 +434,8 @@ app.post('/webhook', async (req, res) => {
                 prompt: queryBasedSystemPrompt,
                 stream: false,
             });
-            chatHistoryContextSummary = generateSummary.data.response
+            console.log("chatHistoryContextSummary", generateSummary.data.response)
+            chatHistoryContextSummary = generateSummary.data.response ?? ""
 
             // const response = await openai.chat.completions.create({
             //     model: 'gpt-4o-mini', // or 'gpt-4o' / 'gpt-4-turbo' / 'gpt-3.5-turbo'
