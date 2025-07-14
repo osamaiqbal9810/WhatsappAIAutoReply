@@ -227,39 +227,44 @@ async function recordImageSent(userId, imageName) {
 }
 
 async function checkAndSendKeywordImage(queryText, to) {
-    console.log("checkAndSendKeywordImage");
-    const tokens = normalizeText(queryText);
-    const tokenSet = new Set(tokens);
-    let imageSent = false;
-    let lastMessageId = null;
+    try {
+        console.log("checkAndSendKeywordImage");
+        const tokens = normalizeText(queryText);
+        const tokenSet = new Set(tokens);
+        let imageSent = false;
+        let lastMessageId = null;
 
-    for (const subject in subjectKeywords) {
-        const aliases = subjectKeywords[subject];
-        const matched = aliases.some(alias => tokenSet.has(alias.toLowerCase()));
+        for (const subject in subjectKeywords) {
+            const aliases = subjectKeywords[subject];
+            const matched = aliases.some(alias => tokenSet.has(alias.toLowerCase()));
 
-        if (matched && imageKeywordMap[subject]) {
-            const images = imageKeywordMap[subject];
+            if (matched && imageKeywordMap[subject]) {
+                const images = imageKeywordMap[subject];
 
-            for (const image of images) {
-                const imageName = path.basename(image.file);
-                const alreadySent = await hasImageBeenSent(to, imageName);
+                for (const image of images) {
+                    const imageName = path.basename(image.file);
+                    const alreadySent = await hasImageBeenSent(to, imageName);
 
-                if (!alreadySent) {
-                    console.log(`Sending image "${imageName}" for subject "${subject}" to ${to}`);
-                    const messageId = await sendImageMessage(to, image.file, image.caption);
-                    if (messageId) {
-                        await recordImageSent(to, imageName);
-                        imageSent = true;
-                        lastMessageId = messageId;
+                    if (!alreadySent) {
+                        console.log(`Sending image "${imageName}" for subject "${subject}" to ${to}`);
+                        const messageId = await sendImageMessage(to, image.file, image.caption);
+                        if (messageId) {
+                            await recordImageSent(to, imageName);
+                            imageSent = true;
+                            lastMessageId = messageId;
+                        }
+                    } else {
+                        console.log(`Image "${imageName}" already sent to ${to}`);
                     }
-                } else {
-                    console.log(`Image "${imageName}" already sent to ${to}`);
                 }
             }
         }
-    }
 
-    return { sent: imageSent, messageId: lastMessageId };
+        return { sent: imageSent, messageId: lastMessageId };
+    } catch (error) {
+        console.error('Error in checkAndSendKeywordImage:', error);
+        return { sent: false };
+    }
 }
 
 
@@ -316,250 +321,228 @@ async function sendImageMessage(to, imagePath, caption = '') {
 
 // Endpoint to handle incoming messages
 app.post('/webhook', async (req, res) => {
-    // console.log('Received webhook:', JSON.stringify(req.body, null, 2));
-    const entry = req.body.entry;
-    if (entry && entry[0].changes && entry[0].changes[0].value.messages) {
-        const message = entry[0].changes[0].value.messages[0];
-        const from = message.from; // User's phone number
-        let queryText = "";
+    try {
+        const entry = req.body.entry;
+        if (entry && entry[0].changes && entry[0].changes[0].value.messages) {
+            const message = entry[0].changes[0].value.messages[0];
+            const from = message.from; // User's phone number
+            let queryText = "";
 
-        if (message.type === 'text') {
-            queryText = message.text.body;
-            console.log(`Text message from ${from}: ${queryText}`);
-        } else if (message.type === 'audio') {
-            const audioId = message.audio.id;
-            console.log(`Audio message from ${from}, audio ID: ${audioId}`);
+            if (message.type === 'text') {
+                queryText = message.text.body;
+                console.log(`Text message from ${from}: ${queryText}`);
+            } else if (message.type === 'audio') {
+                const audioId = message.audio.id;
+                console.log(`Audio message from ${from}, audio ID: ${audioId}`);
 
-            try {
-                // 1. Get audio URL from WhatsApp
-                const mediaUrlResponse = await axios.get(`https://graph.facebook.com/v20.0/${audioId}`, {
-                    headers: {
-                        'Authorization': `Bearer ${WHATSAPP_TOKEN}`
-                    }
-                });
-                const audioUrl = mediaUrlResponse.data.url;
-                console.log(`Audio URL: ${audioUrl}`);
-
-                // 2. Download audio file
-                const audioResponse = await axios({
-                    method: 'get',
-                    url: audioUrl,
-                    responseType: 'stream',
-                    headers: {
-                        'Authorization': `Bearer ${WHATSAPP_TOKEN}`
-                    }
-                });
-
-                const tempAudioPath = path.join(__dirname, 'temp_audio_' + audioId + '.ogg'); // Assuming .ogg based on WhatsApp docs
-                const writer = fs.createWriteStream(tempAudioPath);
-                audioResponse.data.pipe(writer);
-
-                await new Promise((resolve, reject) => {
-                    writer.on('finish', resolve);
-                    writer.on('error', reject);
-                });
-                console.log(`Audio downloaded to: ${tempAudioPath}`);
-
-                // 3. Transcribe audio
-                const transcribeProcess =  spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
-                let transcribedText = '';
-                transcribeProcess.stdout.on('data', (data) => {
-                    transcribedText += data.toString().trim();
-                });
-                transcribeProcess.stderr.on('data', (data) => {
-                    console.error(`Transcribe script error: ${data}`);
-                });
-
-                await new Promise((resolve, reject) => {
-                    transcribeProcess.on('close', (code) => {
-                        if (code !== 0) {
-                            console.error(`Transcribe script exited with code ${code}`);
-                            reject(new Error(`Transcribe script failed with code ${code}`));
-                        } else {
-                            resolve();
+                try {
+                    // 1. Get audio URL from WhatsApp
+                    const mediaUrlResponse = await axios.get(`https://graph.facebook.com/v20.0/${audioId}`, {
+                        headers: {
+                            'Authorization': `Bearer ${WHATSAPP_TOKEN}`
                         }
                     });
-                });
-                queryText = transcribedText;
-                console.log(`Transcribed text: ${queryText}`);
+                    const audioUrl = mediaUrlResponse.data.url;
+                    console.log(`Audio URL: ${audioUrl}`);
 
-                // Clean up temporary audio file
-                fs.unlink(tempAudioPath, (err) => {
-                    if (err) console.error(`Error deleting temp audio file: ${err}`);
-                    else console.log(`Deleted temp audio file: ${tempAudioPath}`);
-                });
+                    // 2. Download audio file
+                    const audioResponse = await axios({
+                        method: 'get',
+                        url: audioUrl,
+                        responseType: 'stream',
+                        headers: {
+                            'Authorization': `Bearer ${WHATSAPP_TOKEN}`
+                        }
+                    });
 
-               
+                    const tempAudioPath = path.join(__dirname, 'temp_audio_' + audioId + '.ogg'); // Assuming .ogg based on WhatsApp docs
+                    const writer = fs.createWriteStream(tempAudioPath);
+                    audioResponse.data.pipe(writer);
 
-            } catch (error) {
-                console.error('Error processing audio message:', error);
-                await sendTextMessage(from, "Sorry, I had trouble processing your audio message.");
-                res.sendStatus(200);
-                return;
-            }
-        } else {
-            console.log(`Received unsupported message type: ${message.type}`);
-            await sendTextMessage(from, "Sorry, I can only process text and audio messages.");
-            res.sendStatus(200);
-            return;
-        }
+                    await new Promise((resolve, reject) => {
+                        writer.on('finish', resolve);
+                        writer.on('error', reject);
+                    });
+                    console.log(`Audio downloaded to: ${tempAudioPath}`);
 
-        if (!queryText) {
-            console.log('No query text to process.');
-            res.sendStatus(200);
-            return;
-        }
+                    // 3. Transcribe audio
+                    const transcribeProcess =  spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
+                    let transcribedText = '';
+                    transcribeProcess.stdout.on('data', (data) => {
+                        transcribedText += data.toString().trim();
+                    });
+                    transcribeProcess.stderr.on('data', (data) => {
+                        console.error(`Transcribe script error: ${data}`);
+                    });
 
-         const imageSent = await checkAndSendKeywordImage(queryText, from);
+                    await new Promise((resolve, reject) => {
+                        transcribeProcess.on('close', (code) => {
+                            if (code !== 0) {
+                                console.error(`Transcribe script exited with code ${code}`);
+                                reject(new Error(`Transcribe script failed with code ${code}`));
+                            } else {
+                                resolve();
+                            }
+                        });
+                    });
+                    queryText = transcribedText;
+                    console.log(`Transcribed text: ${queryText}`);
 
-        // --- AI Logic using Milvus ---
-        let chatHistoryContextMessages = []
-        let chatHistoryContextSummary = "";
-        let recent_chat_history = [];
-        const whatsappUserId = from;
-        const whatsappMessageId = message.id;
-        const userId = message.context && message.context.from ? message.context.from : whatsappUserId;
-        console.log("message", JSON.stringify(message))
-        if (message.context && message.context.id) {
-            // This is a reply to an old message
-            console.log(`Reply to message ID: ${message.context.id}`);
-            chatHistoryContextMessages = await getChatHistory(userId, message.context.id, 5);
-            console.log("chatHistoryContextMessages", chatHistoryContextMessages)
-            const excludedIds = chatHistoryContextMessages.map(msg => msg._id);
-            recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 25);
+                    // Clean up temporary audio file
+                    fs.unlink(tempAudioPath, (err) => {
+                        if (err) console.error(`Error deleting temp audio file: ${err}`);
+                        else console.log(`Deleted temp audio file: ${tempAudioPath}`);
+                    });
 
-            let queryBasedSystemPrompt = SystemPromptForChatHistoryBasedOnQuery(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), queryText, chatHistoryContextMessages)
-            const generateSummary = await axios.post('http://127.0.0.1:11434/api/generate', {
-                model: 'gemma3:1b',
-                prompt: queryBasedSystemPrompt,
-                stream: false,
-            });
-            console.log("chatHistoryContextSummary", generateSummary.data.response)
-            chatHistoryContextSummary = generateSummary.data.response ?? ""
-
-            // const response = await openai.chat.completions.create({
-            //     model: 'gpt-4o-mini', // or 'gpt-4o' / 'gpt-4-turbo' / 'gpt-3.5-turbo'
-            //     messages: [
-            //         { role: 'system', content: queryBasedSystemPrompt },
-            //     ],
-            //     temperature: 0.1,
-            //     stream: false,
-            // });
-
-            // const summaryDataBasedOnQuery = response.choices[0].message.content;
-
-            // const assistantReply = response.choices[0].message.content;
-            // console.log("GPT Response:", assistantReply);
-            // Extract IDs to exclude
-
-        }
-
-        const milvusProcess = spawn('python', [path.join(__dirname, 'src/query_milvus.py')]);
-
-        const inputData = {
-            user_id: userId,
-            data: {
-                query: queryText,
-                num_of_reference: 50,
-                model: {
-                    modelId: "gemini-2.5-flash",
-                    contextWindow: 32768,
-                    maxCompletionTokens: 8192
-                },
-                api_key: GEMINI_API_KEY,
-                chat_history: chatHistoryContextSummary,
-                recent_chat_history: formattedLastNChatQA(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), chatHistoryContextMessages)
-            }
-        };
-
-        milvusProcess.stdin.write(JSON.stringify(inputData));
-        milvusProcess.stdin.end();
-
-        let milvusOutput = '';
-        milvusProcess.stdout.on('data', (data) => {
-            milvusOutput += data.toString();
-        });
-        milvusProcess.stderr.on('data', (data) => {
-            console.error(`Milvus query script error: ${data}`);
-        });
-
-        milvusProcess.on('close', async (code) => {
-            if (code !== 0) {
-                console.error(`Milvus query script exited with code ${code}`);
-                await sendTextMessage(from, "Sorry, I encountered an error while processing your request.");
-                return;
-            }
-
-            try {
-                const jsonStart = milvusOutput.indexOf('{');
-                if (jsonStart === -1) {
-                    console.error('No JSON object found in Milvus script output.');
-                    await sendTextMessage(from, "Sorry, I couldn't get a proper response.");
-                    return;
+                } catch (error) {
+                    console.error('Error processing audio message:', error);
+                    await sendTextMessage(from, "Sorry, I had trouble processing your audio message.");
                 }
-                const jsonString = milvusOutput.substring(jsonStart);
-                const result = JSON.parse(jsonString);
-                const answer = result.answer || "Sorry, I couldn't find an answer.";
+            } else {
+                console.log(`Received unsupported message type: ${message.type}`);
+                await sendTextMessage(from, "Sorry, I can only process text and audio messages.");
+            }
+
+            if (queryText) {
+                const imageSent = await checkAndSendKeywordImage(queryText, from);
+
+                // --- AI Logic using Milvus ---
+                let chatHistoryContextMessages = []
+                let chatHistoryContextSummary = "";
+                let recent_chat_history = [];
                 const whatsappUserId = from;
                 const whatsappMessageId = message.id;
                 const userId = message.context && message.context.from ? message.context.from : whatsappUserId;
-                const references = result.references || [];
-                let whatsappReplyMessageId = null;
+                console.log("message", JSON.stringify(message))
+                if (message.context && message.context.id) {
+                    // This is a reply to an old message
+                    console.log(`Reply to message ID: ${message.context.id}`);
+                    chatHistoryContextMessages = await getChatHistory(userId, message.context.id, 5);
+                    console.log("chatHistoryContextMessages", chatHistoryContextMessages)
+                    const excludedIds = chatHistoryContextMessages.map(msg => msg._id);
+                    recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 25);
 
-                const chatRecord = {
-                    _id: new Date().getTime(),
-                    userId: userId,
-                    question: queryText,
-                    answer: answer,
-                    model: "gemini-2.5-flash",
-                    references: references,
-                    whatsappUserId: whatsappUserId,
-                    whatsappMessageId: whatsappMessageId,
-                    whatsappReplyMessageId: whatsappReplyMessageId,
-                    timestamp: new Date()
-                };
-               // await saveChatHistory(chatRecord);
+                    let queryBasedSystemPrompt = SystemPromptForChatHistoryBasedOnQuery(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), queryText, chatHistoryContextMessages)
+                    const generateSummary = await axios.post('http://127.0.0.1:11434/api/generate', {
+                        model: 'gemma3:1b',
+                        prompt: queryBasedSystemPrompt,
+                        stream: false,
+                    });
+                    console.log("chatHistoryContextSummary", generateSummary.data.response)
+                    chatHistoryContextSummary = generateSummary.data.response ?? ""
 
-                // If the original message was audio, convert the answer to speech and send audio
-                if (message.type === 'audio') {
-                    const outputAudioFilename = path.join(__dirname, 'output_audio_' + Date.now() + '.mp3');
-                    const ttsProcess = spawn('python', [path.join(__dirname, 'src/p5_textToSpeech_audio.py'), answer, outputAudioFilename]);
-                    let ttsOutput = '';
-                    ttsProcess.stdout.on('data', (data) => {
-                        ttsOutput += data.toString().trim();
-                    });
-                    ttsProcess.stderr.on('data', (data) => {
-                        console.error(`TTS script error: ${data}`);
-                    });
-
-                    ttsProcess.on('close', async (ttsCode) => {
-                        if (ttsCode !== 0) {
-                            console.error(`TTS script exited with code ${ttsCode}`);
-                            await sendTextMessage(from, "Sorry, I couldn't convert the answer to audio.");
-                        } else {
-                            console.log(`TTS output file: ${ttsOutput}`);
-                            whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput); // Call the placeholder function
-                            chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
-                            await saveChatHistory(chatRecord);
-                            // Clean up generated audio file
-                            fs.unlink(outputAudioFilename, (err) => {
-                                if (err) console.error(`Error deleting generated audio file: ${err}`);
-                                else console.log(`Deleted generated audio file: ${outputAudioFilename}`);
-                            });
-                        }
-                    });
-                } else {
-                    // Otherwise, send text message
-                    whatsappReplyMessageId = await sendTextMessage(from, answer);
-                    chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
-                    await saveChatHistory(chatRecord);
                 }
 
-            } catch (error) {
-                console.error('Failed to process Milvus response or send reply:', error.response ? error.response.data : error.message);
-                await sendTextMessage(from, "An unexpected error occurred.");
+                const milvusProcess = spawn('python', [path.join(__dirname, 'src/query_milvus.py')]);
+
+                const inputData = {
+                    user_id: userId,
+                    data: {
+                        query: queryText,
+                        num_of_reference: 50,
+                        model: {
+                            modelId: "gemini-2.5-flash",
+                            contextWindow: 32768,
+                            maxCompletionTokens: 8192
+                        },
+                        api_key: GEMINI_API_KEY,
+                        chat_history: chatHistoryContextSummary,
+                        recent_chat_history: formattedLastNChatQA(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), chatHistoryContextMessages)
+                    }
+                };
+
+                milvusProcess.stdin.write(JSON.stringify(inputData));
+                milvusProcess.stdin.end();
+
+                let milvusOutput = '';
+                milvusProcess.stdout.on('data', (data) => {
+                    milvusOutput += data.toString();
+                });
+                milvusProcess.stderr.on('data', (data) => {
+                    console.error(`Milvus query script error: ${data}`);
+                });
+
+                milvusProcess.on('close', async (code) => {
+                    if (code !== 0) {
+                        console.error(`Milvus query script exited with code ${code}`);
+                        await sendTextMessage(from, "Sorry, I encountered an error while processing your request.");
+                        return;
+                    }
+
+                    try {
+                        const jsonStart = milvusOutput.indexOf('{');
+                        if (jsonStart === -1) {
+                            console.error('No JSON object found in Milvus script output.');
+                            await sendTextMessage(from, "Sorry, I couldn't get a proper response.");
+                            return;
+                        }
+                        const jsonString = milvusOutput.substring(jsonStart);
+                        const result = JSON.parse(jsonString);
+                        const answer = result.answer || "Sorry, I couldn't find an answer.";
+                        const whatsappUserId = from;
+                        const whatsappMessageId = message.id;
+                        const userId = message.context && message.context.from ? message.context.from : whatsappUserId;
+                        const references = result.references || [];
+                        let whatsappReplyMessageId = null;
+
+                        const chatRecord = {
+                            _id: new Date().getTime(),
+                            userId: userId,
+                            question: queryText,
+                            answer: answer,
+                            model: "gemini-2.5-flash",
+                            references: references,
+                            whatsappUserId: whatsappUserId,
+                            whatsappMessageId: whatsappMessageId,
+                            whatsappReplyMessageId: whatsappReplyMessageId,
+                            timestamp: new Date()
+                        };
+                       // await saveChatHistory(chatRecord);
+
+                        // If the original message was audio, convert the answer to speech and send audio
+                        if (message.type === 'audio') {
+                            const outputAudioFilename = path.join(__dirname, 'output_audio_' + Date.now() + '.mp3');
+                            const ttsProcess = spawn('python', [path.join(__dirname, 'src/p5_textToSpeech_audio.py'), answer, outputAudioFilename]);
+                            let ttsOutput = '';
+                            ttsProcess.stdout.on('data', (data) => {
+                                ttsOutput += data.toString().trim();
+                            });
+                            ttsProcess.stderr.on('data', (data) => {
+                                console.error(`TTS script error: ${data}`);
+                            });
+
+                            ttsProcess.on('close', async (ttsCode) => {
+                                if (ttsCode !== 0) {
+                                    console.error(`TTS script exited with code ${ttsCode}`);
+                                    await sendTextMessage(from, "Sorry, I couldn't convert the answer to audio.");
+                                } else {
+                                    console.log(`TTS output file: ${ttsOutput}`);
+                                    whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput); // Call the placeholder function
+                                    chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
+                                    await saveChatHistory(chatRecord);
+                                    // Clean up generated audio file
+                                    fs.unlink(outputAudioFilename, (err) => {
+                                        if (err) console.error(`Error deleting generated audio file: ${err}`);
+                                        else console.log(`Deleted generated audio file: ${outputAudioFilename}`);
+                                    });
+                                }
+                            });
+                        } else {
+                            // Otherwise, send text message
+                            whatsappReplyMessageId = await sendTextMessage(from, answer);
+                            chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
+                            await saveChatHistory(chatRecord);
+                        }
+
+                    } catch (error) {
+                        console.error('Failed to process Milvus response or send reply:', error.response ? error.response.data : error.message);
+                        await sendTextMessage(from, "An unexpected error occurred.");
+                    }
+                });
             }
-        });
+        }
+    } catch (error) {
+        console.error('An unexpected error occurred in the webhook handler:', error);
     }
     res.sendStatus(200);
 });
