@@ -29,6 +29,13 @@ class LLM(Enum):
     default = "default"
     gemini = "gemini-1.5-flash"
     gemini_2_5= "gemini-2.5-flash"
+    
+    
+def sanitize_text(text: str) -> str:
+    """
+    Removes invalid surrogate characters and ensures text is UTF-8 safe.
+    """
+    return text.encode("utf-8", "ignore").decode("utf-8")
 
 def getSystemPrompt(retrievedKnowledge: str, recent_chat_history: str, chatHistoryContextSummary: str, myQuestion: str):
     if recent_chat_history == "":
@@ -40,10 +47,11 @@ You are Mirchawala Assistant, a polite and helpful assistant. You are currently 
 ### **Core Instructions (No Chat History Version):**
 
 1. **Language Detection & Response:**  
-   **ALWAYS** detect the user's language from their message and respond in that same language. If the language is not clearly detectable, default to English.
+    **Always** Detect the user's language from their latest message and reply in the same language. This includes English, Roman Urdu, Roman English, or any other language/script they use. If unclear, default to English.
 
 2. **Answer Source:**  
    Use **ONLY the "Relevant Information from Knowledge Base"** to formulate your answer. Do not use external knowledge, internal facts, or personal opinions.
+    consider **chatHistoryContextSummary** while generating the response. It will help to create to the point answer.
 
 3. **Context Usage:**  
     * Respond user greetings in polite and professional manner.
@@ -83,7 +91,8 @@ You are Mirchawala Assistant, a polite and helpful assistant. You are currently 
 ---
 
 ### **Input Context**
-
+**chatHistoryContextSummary**
+{chatHistoryContextSummary}
 **Relevant Information from Knowledge Base:**  
 {retrievedKnowledge}
 
@@ -103,7 +112,7 @@ You are Mirchawala Assistant, a polite, professional, and helpful responder for 
 - **If `Recent Chat History` is provided:**
    - Carefully analyze it to understand the current conversation flow.
    - Use it to resolve follow-up references (e.g., "that one," "it," "last time you said").
-   - Use the `Recent Chat Summary` for quick context understanding.
+   - Use the `Recent Chat History` for quick context understanding.
    - **Do not assume intent if history is missing**—focus only on the current message.
 
 ---
@@ -118,14 +127,13 @@ You are Mirchawala Assistant, a polite, professional, and helpful responder for 
 
 #### **3. Language Detection & Response**
 
-- Detect the user's language from their message and respond in the **same language**.
-- If unclear, default to **English**.
+-  **Always** Detect the user's language from their latest message and reply in the same language. This includes English, Roman Urdu, Roman English, or any other language/script they use. If unclear, default to English.
 
 ---
 
 #### **4. Response Style & Professional Boundaries**
 
-- Write **concise replies (max 150 words)** like a **human WhatsApp assistant**—friendly, clear, natural.
+- Write **concise and to the point replies  (max 150 words)** like a **human WhatsApp assistant**—friendly, clear, natural Do **not** provide too much information, if this is required further information can be asked in follow up questions. 
 - **Never mention you are an AI** or reference system limitations.
 - Do not expose internal processes like knowledge base, chat history, or assistant role.
 - **Avoid unnecessary greetings or sign-offs**, unless it’s the first user message.
@@ -181,14 +189,16 @@ def queryLLM(
     
 ) -> Tuple[AppStatusCode, str]:
 
-    systemPrompt = getSystemPrompt(retrievedKnowledge, recent_chat_history,chatHistoryContextSummary , myQuestion)
-    # sys.stdout.reconfigure(encoding='utf-8')
+    systemPrompt = getSystemPrompt(sanitize_text(retrievedKnowledge),  sanitize_text(recent_chat_history),chatHistoryContextSummary , sanitize_text(myQuestion))
+    systemPrompt =sanitize_text(systemPrompt)
+    sys.stdout.reconfigure(encoding='utf-8')
 
-    # logger.info("System prompt generated successfully.")
+    logger.info("System prompt generated successfully.")
     # Optional: Save to UTF-8 file for debugging
-    # with open("system_prompt_debug.txt", "w", encoding="utf-8") as f:
-    #  f.write(systemPrompt)
+    with open("system_prompt_debug.txt", "w", encoding="utf-8") as f:
+     f.write(systemPrompt)
     userPrompt = "Please answer the following question: " + myQuestion
+    userPrompt = sanitize_text(userPrompt)
     response = ""
 
     llmClient = None

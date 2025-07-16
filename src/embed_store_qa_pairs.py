@@ -30,7 +30,7 @@ COLLECTION_NAME = "whatsapp_data"
 VECTOR_DIM = 384
 
 # --- Load Q&A Pairs ---
-with open("../qa_pairs_complete.json", "r", encoding="utf-8") as f:
+with open("E:\EyraTechProjects\whatsapp-webhook-server\qa_pairs_complete.json", "r", encoding="utf-8") as f:
     qa_pairs = json.load(f)
 
 # --- Step 1: Connect to Milvus ---
@@ -71,7 +71,8 @@ for pair in qa_pairs:
     question_embedding = model.encode(question).tolist()
 
     # Chunk the answer
-    answer_chunks = chunk_answer(answer)
+    # single chunk for each answer
+    answer_chunks = [answer]
 
     # For each chunk, associate the question and question_embedding
     for chunk in answer_chunks:
@@ -79,8 +80,13 @@ for pair in qa_pairs:
         questions.append(question)
         chunks.append(chunk)
         embeddings.append(question_embedding)
+        # --- Step 5: Insert into Milvus ---
+    if len(answer) > 4096:
+        print(f"answer length: {len(answer)}")
+        print(f"answer preview: {answer[:200]}...")  # print first 200 characters as preview
 
-# --- Step 5: Insert into Milvus ---
+
+
 query_types = ["support"] * len(ids)
 entities = [ids, questions, chunks, embeddings, query_types]
 collection.insert(entities)

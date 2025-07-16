@@ -5,7 +5,7 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const { MongoClient } = require('mongodb');
-
+require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 
@@ -98,7 +98,7 @@ async function getLatestMessages(userId, limit = 10) {
     }
 }
 
-async function getLatestMessagesExcludingList(userId, excludedIds, limit = 10) {
+async function getLatestMessagesExcludingList(userId, excludedIds, limit = 5) {
     try {
         const collection = db.collection('chatHistory');
 
@@ -114,6 +114,33 @@ async function getLatestMessagesExcludingList(userId, excludedIds, limit = 10) {
     }
 }
 
+async function extractTheMessageBeingReplied(userId, messageId) {
+    try {
+        console.log("MessageId", messageId)
+        const collection = db.collection('chatHistory');
+
+        let latestMessages = await collection.findOne({
+            userId: userId,
+            whatsappMessageId: messageId
+        })
+        console.log("latestMessage:", latestMessages)
+        if (!latestMessages) {
+            latestMessages = await collection.findOne({
+                userId: userId,
+                whatsappReplyMessageId: messageId
+            })
+        }
+         console.log("latestMessage1:", latestMessages)
+        if (!latestMessages) {
+            return null
+        }
+        return latestMessages;
+    } catch (error) {
+        console.error('Failed to retrieve latest messages:', error);
+        return [];
+    }
+}
+
 
 
 // --- To be updated with your Meta App credentials ---
@@ -121,6 +148,7 @@ const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN || 'EAASMkHTUzx0BPKoNaRKn4avXA
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN || 'YOUR_VERIFY_TOKEN'; // This is a token you create
 const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID || '702753996254604';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || 'AIzaSyDls9FWqnviqujmcIdO5UTZmNpxrbTOf0k';
+const Open_AI_API_KEY = process.env.Open_AI_API_KEY || 'AIzaSyDls9FWqnviqujmcIdO5UTZmNpxrbTOf0k';
 
 const PORT = process.env.PORT || 3000;
 
@@ -429,15 +457,15 @@ async function sendDocumentMessage(to, documentFilePath, filename = 'document.pd
 // Endpoint to handle incoming messages
 app.post('/webhook', async (req, res) => {
     try {
-        
-        
+
+
         const entry = req.body.entry;
         if (entry && entry[0].changes && entry[0].changes[0].value.messages) {
             const message = entry[0].changes[0].value.messages[0];
             const from = message.from; // User's phone number
 
 
-            
+
             // --- Deduplication ---
             // if (alreadyProcessed.includes(message.Id)) {
             //     console.log(`Duplicate message detected: ${message.Id}, skipping.`);
@@ -454,7 +482,7 @@ app.post('/webhook', async (req, res) => {
 
 
             let queryText = "";
-            
+
             if (message.type === 'text') {
                 queryText = message.text.body;
                 console.log(`Text message from ${from}: ${queryText}`);
@@ -549,22 +577,41 @@ app.post('/webhook', async (req, res) => {
                     if (message.context && message.context.id) {
                         refMsgId = message.context.id
                     }
+
+                    console.log("message",message)
                     chatHistoryContextMessages = await getChatHistory(userId, refMsgId, 5);
                     console.log("chatHistoryContextMessages", chatHistoryContextMessages)
                     // if (message.context && message.context.id) {
+                    let messageBeingReplied = await extractTheMessageBeingReplied(userId, message.context.id)
                     const excludedIds = chatHistoryContextMessages.map(msg => msg._id);
-                    recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 10);
+                    recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 5);
                     // }
-                    let queryBasedSystemPrompt = SystemPromptForChatHistoryBasedOnQuery(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), queryText, chatHistoryContextMessages)
-                    const generateSummary = await axios.post('http://127.0.0.1:11434/api/generate', {
-                        model: 'gemma3:1b',
-                        prompt: queryBasedSystemPrompt,
-                        stream: false,
-                    });
-                    console.log("chatHistoryContextSummary", generateSummary.data.response)
-                    chatHistoryContextSummary = generateSummary.data.response ?? ""
+                    let queryBasedSystemPrompt = SystemPromptForChatHistoryBasedOnQuery(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), queryText, chatHistoryContextMessages, messageBeingReplied)
+                    // const generateSummary = await axios.post('http://127.0.0.1:11434/api/generate', {
+                    //     model: 'gemma3:1b',
+                    //     prompt: queryBasedSystemPrompt,
+                    //     stream: false,
+                    // });
+                    // console.log("chatHistoryContextSummary", generateSummary.data.response)
+                    // chatHistoryContextSummary = generateSummary.data.response ?? ""
 
-               }
+                    const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+                        model: 'gpt-4o', // or 'gpt-3.5-turbo' if you prefer
+                        messages: [
+                            { role: 'system', content: queryBasedSystemPrompt }
+                        ],
+                        temperature: 0.1 // Keep it deterministic for summaries
+                    }, {
+                        headers: {
+                            'Authorization': `Bearer ${Open_AI_API_KEY}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    console.log("chatHistoryContextSummary", response.data.choices[0].message.content);
+                    chatHistoryContextSummary = response.data.choices[0].message.content ?? "";
+
+                }
 
                 const milvusProcess = spawn('python', [path.join(__dirname, 'src/query_milvus.py')]);
 
@@ -572,13 +619,13 @@ app.post('/webhook', async (req, res) => {
                     user_id: userId,
                     data: {
                         query: queryText,
-                        num_of_reference: 50,
+                        num_of_reference: 10,
                         model: {
-                            modelId: "gemini-2.5-flash",
-                            contextWindow: 32768,
-                            maxCompletionTokens: 8192
+                            modelId: "o3",
+                            contextWindow: 200000,
+                            maxCompletionTokens: 100000
                         },
-                        api_key: GEMINI_API_KEY,
+                        api_key: Open_AI_API_KEY,
                         chatHistoryContextSummary: chatHistoryContextSummary,
                         recent_chat_history: formattedLastNChatQA(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), chatHistoryContextMessages)
                     }
@@ -607,7 +654,7 @@ app.post('/webhook', async (req, res) => {
                         if (jsonStart === -1) {
                             console.error('No JSON object found in Milvus script output.');
                             await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
-                        return;
+                            return;
                         }
                         const jsonString = milvusOutput.substring(jsonStart);
                         const result = JSON.parse(jsonString);
@@ -623,7 +670,7 @@ app.post('/webhook', async (req, res) => {
                             userId: userId,
                             question: queryText,
                             answer: answer,
-                            model: "gemini-2.5-flash",
+                            model: "o3",
                             references: references,
                             whatsappUserId: whatsappUserId,
                             whatsappMessageId: whatsappMessageId,
@@ -686,16 +733,24 @@ app.listen(PORT, () => {
 function SystemPromptForChatHistoryBasedOnQuery(
     chatHistories,
     query,
-    contextMessages = []
+    contextMessages = [],
+    messageBeingReplied
 ) {
     const basePrompt = `You are an expert at distilling conversation history. Your task is to summarize the most relevant topic from the following recent chat history, specifically in the context of the user's latest question.
 
     Focus only on the information directly related to the user's current query and ignore irrelevant details. The summary should be concise and contain key entities or concepts that would be useful for searching a knowledge base.
-
+    
     ---
 
     `;
+    let messageBeingRepliedMsg = ""
+    console.log("messageBeingReplied", messageBeingReplied)
+    if (messageBeingReplied != null) {
+        
+     messageBeingRepliedMsg =   `Your main focus should be on the message being replied while generating summary: \n
+        System: ${messageBeingReplied.question} \n Answer: ${messageBeingReplied.answer}`
 
+    }
     // ✅ Format context messages properly
     const formattedContextMessages = contextMessages.map(msg => {
         return `User: ${msg.question || msg.text || '[No Question]'}\nSystem: ${msg.answer || '[No Answer]'}`;
@@ -714,7 +769,7 @@ function SystemPromptForChatHistoryBasedOnQuery(
 
     const usersLatestQuestion = `\n\n---\nUser's Latest Question:\n${query}\n---`;
     //  console.log("${basePrompt}${additionalContextMsgs}${formattedChatHistories}${usersLatestQuestion}\n"+ `${basePrompt}${additionalContextMsgs}${formattedChatHistories}${usersLatestQuestion}`)
-    return `${basePrompt}${formattedChatHistories}${additionalContextMsgs}${usersLatestQuestion}`;
+    return `${basePrompt}${messageBeingRepliedMsg}${formattedChatHistories}${additionalContextMsgs}${usersLatestQuestion}`;
 }
 
 
