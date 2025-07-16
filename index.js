@@ -31,6 +31,7 @@ connectToMongoDB();
 
 async function saveChatHistory(chatRecord) {
     try {
+        console.log(chatRecord)
         const collection = db.collection('chatHistory');
         await collection.insertOne(chatRecord);
         console.log('Chat history saved to MongoDB.');
@@ -45,16 +46,19 @@ async function getChatHistory(userId, messageId, limit = 5) {
 
         // Find the current message to get its timestamp
         let currentMessage = await collection.findOne({
+            userId: userId,
             whatsappMessageId: messageId
         });
 
         if (!currentMessage) {
             console.log("!currentMessage", messageId, userId)
             currentMessage = await collection.findOne({
+                userId: userId,
                 whatsappReplyMessageId: messageId
             });
+            console.log("CurrentMessage: ", currentMessage)
         }
-         if (!currentMessage) {
+        if (!currentMessage) {
             return []
         }
 
@@ -71,6 +75,7 @@ async function getChatHistory(userId, messageId, limit = 5) {
         }).sort({ timestamp: 1 }).limit(limit).toArray();
 
         // Combine and return 10 messages (without current)
+        console.log("ChatHistoryMsgs", previousMessages.reverse().concat(nextMessages))
         return previousMessages.reverse().concat(nextMessages);
     } catch (error) {
         console.error('Failed to retrieve chat history:', error);
@@ -78,7 +83,22 @@ async function getChatHistory(userId, messageId, limit = 5) {
     }
 }
 
-async function getLatestMessagesExcludingList(userId, excludedIds, limit = 25) {
+async function getLatestMessages(userId, limit = 10) {
+    try {
+        const collection = db.collection('chatHistory');
+
+        const latestMessages = await collection.find({
+            userId: userId
+        }).sort({ timestamp: -1 }).limit(limit).toArray();
+
+        return latestMessages;
+    } catch (error) {
+        console.error('Failed to retrieve latest messages:', error);
+        return [];
+    }
+}
+
+async function getLatestMessagesExcludingList(userId, excludedIds, limit = 10) {
     try {
         const collection = db.collection('chatHistory');
 
@@ -133,7 +153,7 @@ async function sendTextMessage(to, text) {
                 'Content-Type': 'application/json'
             }
         });
-        console.log('Text reply sent successfully.' ,response.data.messages);
+        console.log('Text reply sent successfully.', response.data.messages);
         return response.data.messages[0].id; // Return the message ID
     } catch (error) {
         console.error('Failed to send text reply:', error.response ? error.response.data : error.message);
@@ -181,9 +201,31 @@ async function sendAudioMessage(to, audioFilePath) {
     }
 }
 
+const documentKeywordMap = {
+    'sbr': [
+        { file: path.join(__dirname, 'documents/SBR Demo Links.pdf'), filename: 'SBR Demo Links.pdf', caption: '' }
+    ],
+    'fr(f7)': [
+        { file: path.join(__dirname, 'documents/f7 demo links.pdf'), filename: 'f7 demo links.pdf', caption: '' }
+    ],
+    'fa1': [
+        { file: path.join(__dirname, 'documents/fa1 demo links.pdf'), filename: 'fa1 demo links.pdf', caption: '' }
+    ],
+    'f3': [
+        { file: path.join(__dirname, 'documents/f3 demo links.pdf'), filename: 'f3 demo links.pdf', caption: '' }
+    ],
+
+    // Add more documents here
+};
+
 const subjectKeywords = {
     'sbr': ['sbr', 'strategic business reporting'],
-    'fr(f7)': ['fr', 'f7', 'financial reporting']
+    'fr(f7)': ['fr', 'f7', 'financial reporting'],
+    'fa1': ['fa1'],
+    'fa2': ['fa2'],
+    'f6': ['f6', 'Tx'],
+    'f3': ['f3', 'FFA'],
+
     // Add more subjects with variations
 };
 
@@ -238,23 +280,43 @@ async function checkAndSendKeywordImage(queryText, to) {
             const aliases = subjectKeywords[subject];
             const matched = aliases.some(alias => tokenSet.has(alias.toLowerCase()));
 
-            if (matched && imageKeywordMap[subject]) {
-                const images = imageKeywordMap[subject];
+            if (matched) {
+                //images
+                if (imageKeywordMap[subject]) {
+                    const images = imageKeywordMap[subject];
 
-                for (const image of images) {
-                    const imageName = path.basename(image.file);
-                    const alreadySent = await hasImageBeenSent(to, imageName);
+                    for (const image of images) {
+                        const imageName = path.basename(image.file);
+                        const alreadySent = await hasImageBeenSent(to, imageName);
 
-                    if (!alreadySent) {
-                        console.log(`Sending image "${imageName}" for subject "${subject}" to ${to}`);
-                        const messageId = await sendImageMessage(to, image.file, image.caption);
-                        if (messageId) {
-                            await recordImageSent(to, imageName);
-                            imageSent = true;
-                            lastMessageId = messageId;
+                        if (!alreadySent) {
+                            console.log(`Sending image "${imageName}" for subject "${subject}" to ${to}`);
+                            const messageId = await sendImageMessage(to, image.file, image.caption);
+                            if (messageId) {
+                                await recordImageSent(to, imageName);
+                                imageSent = true;
+                                lastMessageId = messageId;
+                            }
+                        } else {
+                            console.log(`Image "${imageName}" already sent to ${to}`);
                         }
-                    } else {
-                        console.log(`Image "${imageName}" already sent to ${to}`);
+                    }
+                }
+
+                // documents
+                if (documentKeywordMap[subject]) {
+                    for (const doc of documentKeywordMap[subject]) {
+                        const docName = path.basename(doc.file);
+                        const alreadySent = await hasImageBeenSent(to, docName); // Reusing same log table
+                        if (!alreadySent) {
+                            console.log(`Sending document "${docName}" for "${subject}" to ${to}`);
+                            const messageId = await sendDocumentMessage(to, doc.file, doc.filename, doc.caption);
+                            if (messageId) {
+                                await recordImageSent(to, docName);
+                                mediaSent = true;
+                                lastMessageId = messageId;
+                            }
+                        }
                     }
                 }
             }
@@ -319,15 +381,80 @@ async function sendImageMessage(to, imagePath, caption = '') {
     }
 }
 
+async function sendDocumentMessage(to, documentFilePath, filename = 'document.pdf', caption = '') {
+    try {
+        const FormData = require('form-data');
+        const form = new FormData();
+        form.append('file', fs.createReadStream(documentFilePath));
+        form.append('type', 'application/pdf'); // Change MIME type as needed
+        form.append('messaging_product', 'whatsapp');
+
+        const uploadResponse = await axios.post(`https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/media`, form, {
+            headers: {
+                ...form.getHeaders(),
+                'Authorization': `Bearer ${WHATSAPP_TOKEN}`,
+            },
+        });
+
+        const mediaId = uploadResponse.data.id;
+        console.log(`Document uploaded to WhatsApp, media ID: ${mediaId}`);
+
+        // Send the document message
+        const messageResponse = await axios.post(`https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/messages`, {
+            messaging_product: 'whatsapp',
+            to: to,
+            type: 'document',
+            document: {
+                id: mediaId,
+                filename: filename,
+                caption: caption
+            }
+        }, {
+            headers: {
+                'Authorization': `Bearer ${WHATSAPP_TOKEN}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        console.log('Document message sent successfully.');
+        return messageResponse.data.messages[0].id;
+
+    } catch (error) {
+        console.error('Failed to send document message:', error.response ? error.response.data : error.message);
+        return null;
+    }
+}
+
+// const alreadyProcessed = []
 // Endpoint to handle incoming messages
 app.post('/webhook', async (req, res) => {
     try {
+        
+        
         const entry = req.body.entry;
         if (entry && entry[0].changes && entry[0].changes[0].value.messages) {
             const message = entry[0].changes[0].value.messages[0];
             const from = message.from; // User's phone number
-            let queryText = "";
 
+
+            
+            // --- Deduplication ---
+            // if (alreadyProcessed.includes(message.Id)) {
+            //     console.log(`Duplicate message detected: ${message.Id}, skipping.`);
+            //     return res.sendStatus(200);
+            // }
+
+            //  // Save message ID to prevent reprocessing
+            // alreadyProcessed.push(message.Id);
+
+            // Optional: Keep the array small to prevent memory issues
+            // if (alreadyProcessed.length > 1000) {
+            //     alreadyProcessed.shift(); // Remove oldest message ID
+            // }
+
+
+            let queryText = "";
+            
             if (message.type === 'text') {
                 queryText = message.text.body;
                 console.log(`Text message from ${from}: ${queryText}`);
@@ -366,7 +493,7 @@ app.post('/webhook', async (req, res) => {
                     console.log(`Audio downloaded to: ${tempAudioPath}`);
 
                     // 3. Transcribe audio
-                    const transcribeProcess =  spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
+                    const transcribeProcess = spawn('python', [path.join(__dirname, 'src/p4_transcribe_audio.py'), tempAudioPath]);
                     let transcribedText = '';
                     transcribeProcess.stdout.on('data', (data) => {
                         transcribedText += data.toString().trim();
@@ -400,28 +527,34 @@ app.post('/webhook', async (req, res) => {
                 }
             } else {
                 console.log(`Received unsupported message type: ${message.type}`);
-                await sendTextMessage(from, "Sorry, I can only process text and audio messages.");
+                await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
             }
 
             if (queryText) {
-                const imageSent = await checkAndSendKeywordImage(queryText, from);
 
                 // --- AI Logic using Milvus ---
                 let chatHistoryContextMessages = []
                 let chatHistoryContextSummary = "";
-                let recent_chat_history = [];
+
                 const whatsappUserId = from;
-                const whatsappMessageId = message.id;
-                const userId = message.context && message.context.from ? message.context.from : whatsappUserId;
+                // const whatsappMessageId = message.id;
+                const userId = whatsappUserId;
+                let recent_chat_history = await getLatestMessages(userId, 5);
+                console.log("recent_chat_history", recent_chat_history)
                 console.log("message", JSON.stringify(message))
                 if (message.context && message.context.id) {
                     // This is a reply to an old message
-                    console.log(`Reply to message ID: ${message.context.id}`);
-                    chatHistoryContextMessages = await getChatHistory(userId, message.context.id, 5);
+                    // console.log(`Reply to message ID: ${message.context.id}`);
+                    let refMsgId = message.id
+                    if (message.context && message.context.id) {
+                        refMsgId = message.context.id
+                    }
+                    chatHistoryContextMessages = await getChatHistory(userId, refMsgId, 5);
                     console.log("chatHistoryContextMessages", chatHistoryContextMessages)
+                    // if (message.context && message.context.id) {
                     const excludedIds = chatHistoryContextMessages.map(msg => msg._id);
-                    recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 25);
-
+                    recent_chat_history = await getLatestMessagesExcludingList(userId, excludedIds, 10);
+                    // }
                     let queryBasedSystemPrompt = SystemPromptForChatHistoryBasedOnQuery(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), queryText, chatHistoryContextMessages)
                     const generateSummary = await axios.post('http://127.0.0.1:11434/api/generate', {
                         model: 'gemma3:1b',
@@ -431,7 +564,7 @@ app.post('/webhook', async (req, res) => {
                     console.log("chatHistoryContextSummary", generateSummary.data.response)
                     chatHistoryContextSummary = generateSummary.data.response ?? ""
 
-                }
+               }
 
                 const milvusProcess = spawn('python', [path.join(__dirname, 'src/query_milvus.py')]);
 
@@ -446,7 +579,7 @@ app.post('/webhook', async (req, res) => {
                             maxCompletionTokens: 8192
                         },
                         api_key: GEMINI_API_KEY,
-                        chat_history: chatHistoryContextSummary,
+                        chatHistoryContextSummary: chatHistoryContextSummary,
                         recent_chat_history: formattedLastNChatQA(recent_chat_history.map(chat => ({ question: chat.question, answer: chat.answer })), chatHistoryContextMessages)
                     }
                 };
@@ -465,7 +598,7 @@ app.post('/webhook', async (req, res) => {
                 milvusProcess.on('close', async (code) => {
                     if (code !== 0) {
                         console.error(`Milvus query script exited with code ${code}`);
-                        await sendTextMessage(from, "Sorry, I encountered an error while processing your request.");
+                        await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
                         return;
                     }
 
@@ -473,15 +606,15 @@ app.post('/webhook', async (req, res) => {
                         const jsonStart = milvusOutput.indexOf('{');
                         if (jsonStart === -1) {
                             console.error('No JSON object found in Milvus script output.');
-                            await sendTextMessage(from, "Sorry, I couldn't get a proper response.");
-                            return;
+                            await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
+                        return;
                         }
                         const jsonString = milvusOutput.substring(jsonStart);
                         const result = JSON.parse(jsonString);
-                        const answer = result.answer || "Sorry, I couldn't find an answer.";
+                        const answer = result.answer || "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali";
                         const whatsappUserId = from;
                         const whatsappMessageId = message.id;
-                        const userId = message.context && message.context.from ? message.context.from : whatsappUserId;
+                        const userId = whatsappUserId;
                         const references = result.references || [];
                         let whatsappReplyMessageId = null;
 
@@ -497,9 +630,7 @@ app.post('/webhook', async (req, res) => {
                             whatsappReplyMessageId: whatsappReplyMessageId,
                             timestamp: new Date()
                         };
-                       // await saveChatHistory(chatRecord);
 
-                        // If the original message was audio, convert the answer to speech and send audio
                         if (message.type === 'audio') {
                             const outputAudioFilename = path.join(__dirname, 'output_audio_' + Date.now() + '.mp3');
                             const ttsProcess = spawn('python', [path.join(__dirname, 'src/p5_textToSpeech_audio.py'), answer, outputAudioFilename]);
@@ -514,13 +645,13 @@ app.post('/webhook', async (req, res) => {
                             ttsProcess.on('close', async (ttsCode) => {
                                 if (ttsCode !== 0) {
                                     console.error(`TTS script exited with code ${ttsCode}`);
-                                    await sendTextMessage(from, "Sorry, I couldn't convert the answer to audio.");
+                                    await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
                                 } else {
                                     console.log(`TTS output file: ${ttsOutput}`);
-                                    whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput); // Call the placeholder function
+                                    whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput);
                                     chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
                                     await saveChatHistory(chatRecord);
-                                    // Clean up generated audio file
+                                    await checkAndSendKeywordImage(queryText, from);
                                     fs.unlink(outputAudioFilename, (err) => {
                                         if (err) console.error(`Error deleting generated audio file: ${err}`);
                                         else console.log(`Deleted generated audio file: ${outputAudioFilename}`);
@@ -528,10 +659,10 @@ app.post('/webhook', async (req, res) => {
                                 }
                             });
                         } else {
-                            // Otherwise, send text message
                             whatsappReplyMessageId = await sendTextMessage(from, answer);
                             chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
                             await saveChatHistory(chatRecord);
+                            await checkAndSendKeywordImage(queryText, from);
                         }
 
                     } catch (error) {

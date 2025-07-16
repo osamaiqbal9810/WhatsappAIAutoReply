@@ -48,14 +48,14 @@ def whatsapp_queryLLM(
     num_references: int,
     modelConfig: ModelConfig,
     api_key: str,
-    chat_history: str = "",
+    chatHistoryContextSummary: str = "",
     recent_chat_history: str = ""
 ) -> dict:
     logger.info("Starting WhatsApp Q&A retrieval")
     max_chunks = 0
 
     try:
-        max_chunks, usable_tokens = get_safe_chunk_limit_by_model(
+        max_chunks = get_safe_chunk_limit_by_model(
             modelConfig, num_references, reserved_prompt_text=query)
         if max_chunks == 0:
             return {
@@ -78,7 +78,7 @@ def whatsapp_queryLLM(
             "answer": "",
             "data": []
         }
-    combined_query = chat_history + "\n" + query if chat_history else query
+    combined_query = chatHistoryContextSummary + "\n" + query if chatHistoryContextSummary else query
     query_vector = sentence_Transformer.encode(sentences=combined_query, show_progress_bar=False)
 
     # ✅ Use MilvusManager's internal search method (no filter expression)
@@ -104,12 +104,13 @@ def whatsapp_queryLLM(
             api_key=api_key,
             myQuestion=query,
             retrievedKnowledge=aggregated_content,
-            recentChatSummary=recent_chat_history
+            recent_chat_history=recent_chat_history,
+            chatHistoryContextSummary = chatHistoryContextSummary
         )
     except Exception as e:
         logger.error(f"queryLLM failed: {e}", exc_info=True)
         return {
-            "status": AppStatusCode.LLM_FAILED.value,
+            "status": AppStatusCode.LLM_ERROR.value,
             "answer": "An error occurred while generating the answer.",
             "data": []
         }
@@ -142,7 +143,7 @@ if __name__ == "__main__":
             user_query = data_payload.get("query")
             num_references = data_payload.get("num_of_reference", 5)
             api_key = data_payload.get("api_key")
-            chat_history = data_payload.get("chat_history", "")
+            chatHistoryContextSummary = data_payload.get("chatHistoryContextSummary", "")
             recent_chat_history = data_payload.get("recent_chat_history", "")
 
             model_dict = data_payload.get("model")
@@ -158,7 +159,7 @@ if __name__ == "__main__":
                     num_references=num_references,
                     modelConfig=model,
                     api_key=api_key,
-                    chat_history=chat_history,
+                    chatHistoryContextSummary=chatHistoryContextSummary,
                     recent_chat_history=recent_chat_history
                 )
 

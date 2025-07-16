@@ -1,0 +1,847 @@
+[
+  {
+    "question": "What ACCA subjects and foundation-level papers are currently offered by Sir Mustafa?",
+    "answer": "The ACCA subjects and foundation-level papers offered include FA1, FA2, F3/FFA, F6/TX, F7/FR, and SBR (INT)[cite: 64]."
+  },
+  {
+    "question": "What is the fee structure for each subject/course, including any standard discounted rates? considering discount to be applied",
+    "answer": "Currently, there's a 40% discount being offered, making the fee 24000 for all services[cite: 270]. For specific pricing based on region and subject, refer to the provided price sheet for June and September attempts, noting that admissions for September and December attempts are open with the same 40% discount on skills and professional papers[cite: 274]. Prices vary by region (e.g., Pakistan, UK, Nepali Continent, India, Middle East, Bangladesh, Sri Lanka, Rest of the World) and subject level (FIA, Knowledge, Skills, Professional, OBU)[cite: 274]."
+  },
+  {
+    "question": "What are the official bank account details for local payments?",
+    "answer": "For local payments only, the official bank account details are: Bank Name: Bank Alfalah, Account Title: Mirchawala Hub of Accountancy, Branch Code: 0016, Account Number: 1007554802, IBAN Number: PK60ALFH0016001007554802, Swift Code: ALFHPKKA. International remittances are not accepted directly into this account[cite: 77, 78, 79, 80, 81, 82, 83, 268]."
+  },
+  {
+    "question": "Are international remittances accepted directly into the provided bank account, or are there alternative methods for international payments?",
+    "answer": "No, international remittances are not accepted directly into the provided local bank account[cite: 83, 268]. Website URLs for enrollment of international students have been shared with the team[cite: 74]."
+  },
+  {
+    "question": "What are UK bank account details?",
+    "answer": "Bank: Wise Bank\nWise Account number: 36687506\nSort code: 23-14-70\nAccount name: Hira Rehman."
+  },
+  {
+    "question": "What is the general Admissions Portal for online enrollment and payments?",
+    "answer": "The general Admissions Portal is https://admissions.mirchawala.com."
+  },
+  {
+    "question": "Where can I find the direct enrollment links for F7 September attempt in Urdu/Hindi and English?",
+    "answer": "For F7 September attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26345 and the English link is https://admissions.mirchawala.com/?add-to-cart=26346."
+  },
+  {
+    "question": "What are the direct enrollment links for F7 December attempt in Urdu/Hindi and English?",
+    "answer": "For F7 December attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26366 and the English link is https://admissions.mirchawala.com/?add-to-cart=26365."
+  },
+  {
+    "question": "Can you provide the direct enrollment links for F6/TX September attempt for both Urdu/Hindi and English languages?",
+    "answer": "For F6/TX September attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26344 and the English link is https://admissions.mirchawala.com/?add-to-cart=26343."
+  },
+  {
+    "question": "What are the direct enrollment links for F6/TX December attempt in Urdu/Hindi and English?",
+    "answer": "For F6/TX December attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26364 and the English link is https://admissions.mirchawala.com/?add-to-cart=26363."
+  },
+  {
+    "question": "Where can I find the direct enrollment links for SBR September attempt in Urdu/Hindi and English?",
+    "answer": "For SBR September attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26388 and the English link is https://admissions.mirchawala.com/?add-to-cart=26378."
+  },
+  {
+    "question": "What are the direct enrollment links for SBR December attempt in Urdu/Hindi and English?",
+    "answer": "For SBR December attempt, the Urdu/Hindi link is https://admissions.mirchawala.com/?add-to-cart=26404 and the English link is https://admissions.mirchawala.com/?add-to-cart=26395."
+  },
+  {
+    "question": "How should students submit proof of payment?",
+    "answer": "For manual bank account payments, students should share a screenshot of the payment. This screenshot is reviewed to confirm its validity and that the payment was made to the correct account. Afterwards, an admission form is sent to the student. Once the student fills and submits the form, it is forwarded along with the payment screenshot to the Admissions Group, where the admin provides LMS course access[cite: 96, 97]."
+  },
+  {
+    "question": "Is there a clear policy statement regarding fees being non-refundable and non-transferable to other subjects?",
+    "answer": "Yes, the fee paid is non-refundable and non-transferable to other subjects[cite: 99, 269]. All terms and conditions regarding enrollment, fees, and LMS access are mentioned on https://mirchawala.com/terms-and-conditions/[cite: 100]."
+  },
+  {
+    "question": "How should the chatbot guide students on obtaining their initial LMS login and password?",
+    "answer": "After a student makes a payment and fills out the admission form, the form and payment screenshot are forwarded to the admissions group, where the admin provides LMS course access[cite: 97]."
+  },
+  {
+    "question": "What is the fee for FIA - 7 papers across all listed countries/regions?",
+    "answer": "The fee for FIA - 7 papers is: Pakistan (PKR) 105,000; UK (GBP) 730; Nepali Continent (NPR) 58,500; Euro (EUR) 530; India (INR) 50,000; Middle East (USD) 650; Bangladesh (BDT) 47,000; Sri Lanka (LKR) 116,000; Rest of the world (USD) 650."
+  },
+  {
+    "question": "What is the 'Knowledge - Per exam' fee for FA1, FA2, across all listed countries/regions?",
+    "answer": "The 'Knowledge - Per exam' includes FA1, FA2, F3/FFA. Fee for FA1, FA2 is: Pakistan (PKR) 18,000; UK (GBP) 125; Nepali Continent (NPR) 10,000; Euro (EUR) 90; India (INR) 8,500; Middle East (USD) 110; Bangladesh (BDT) 8,000; Sri Lanka (LKR) 20,000; Rest of the world (USD) 110."
+  },
+
+  {
+    "question": "What are the fees for 'Skills - Per exam' for Dec'25 and Sep'25 attempts across all listed countries/regions, considering the discount to be applied later?",
+    "answer": "The 'Skills - Per exam' includes F6/TX, F7/FR/ Fee for Dec'25 and Sep'25 attempts, discounts are not included in this fees, it will be applied later: Pakistan (PKR) 36,750; UK (GBP) 233; Nepali Continent (NPR) 20,000; Euro (EUR) 167; India (INR) 16,000; Middle East (USD) 200; Bangladesh (BDT) 16,000; Sri Lanka (LKR) 38,700; Rest of the world (USD) 200."
+  },
+  {
+    "question": "What are the fees for 'Professional - Per exam' for Dec'25 and Sep'25 attempts across all listed countries/regions, considering the discount to applied?",
+    "answer": "The 'Professional - Per exam' includes SBR (Strategic Business Reporting) fee for Dec'25 and Sep'25 attempts discounts are not included in this fees, it will be applied later:: Pakistan (PKR) 40,000; UK (GBP) 267; Nepali Continent (NPR) 23,350; Euro (EUR) 200; India (INR) 19,000; Middle East (USD) 235; Bangladesh (BDT) 17,400; Sri Lanka (LKR) 42,100; Rest of the world (USD) 235."
+  },
+  {
+    "question": "What is the OBU fee across all listed countries/regions?",
+    "answer": "The OBU fee is: Pakistan (PKR) 45,000; UK (GBP) 350; Nepali Continent (NPR) 30,000; Euro (EUR) 350; India (INR) 25,000; Middle East (USD) 350; Bangladesh (BDT) 19,500; Sri Lanka (LKR) 47,400; Rest of the world (USD) 350."
+  },
+  {
+    "question": "What are the 'Adm fees' (Admission fees) across all listed countries/regions?",
+    "answer": "The 'Adm fees' are: Pakistan (PKR) 10,000; UK (GBP) 50; Nepali Continent (NPR) 5,000; Euro (EUR) 50; India (INR) 5,000; Middle East (USD) 50; Bangladesh (BDT) 4,500; Sri Lanka (LKR) 10,500; Rest of the world (USD) 50. These admission fees are only applicable on first-time enrollment for FIA and Part 1 ACCA."
+  },
+  {
+    "question": "What are the direct download/access links for the LMS applications across all supported operating systems (Windows App, Android App, iOS App)?",
+    "answer": "All app download links are available on mirchawala.net[cite: 107]."
+  },
+  {
+    "question": "What exact details are required from students for LMS setup upon enrollment?",
+    "answer": "The exact details required from students for LMS setup upon enrollment are: Full Name, Email ID, ACCA Registration Number, Date of Birth, WhatsApp number (with country code), Subject, Course Language, and the Exam Session they are attempting[cite: 110, 111]."
+  },
+  {
+    "question": "What is the policy regarding multi-device access for course materials?",
+    "answer": "The policy is one-device access[cite: 114, 115]. For second-device access, a complete new enrollment will be required[cite: 115]."
+  },
+  {
+    "question": "If additional device access is requested, what is the procedure and associated cost?",
+    "answer": "If additional device access is requested, it requires re-enrollment at a separate regular fee[cite: 117, 118]."
+  },
+  {
+    "question": "What are the common solutions or initial steps for students facing issues like 'course removed from portal' or 'lost access'?",
+    "answer": "These issues typically arise when a student demands a course extension after expiration[cite: 122]. The institute asks for the payment receipt to check if the full amount was paid and if it was within the last 6 months[cite: 123]. If both conditions are met, an extension for the next immediate attempt is provided (no longer than the next attempt)[cite: 124]. However, if the fee is incomplete or 6 months or more have passed, no extension will be provided, and the student will have to re-enroll[cite: 125]."
+  },
+  {
+    "question": "Do you offer any free course extension periods?",
+    "answer": "The course extension policy is as described in the answer to the question about 'course removed from portal' or 'lost access' issues[cite: 130]. No free extension period is explicitly stated as 'one month free extension'[cite: 129, 130]."
+  },
+  {
+    "question": "Are there specific scenarios where a 'no further extension policy' applies, necessitating re-enrollment?",
+    "answer": "Yes, if the fee is not complete or 6 months (or more) have passed since enrollment, no extension will be provided, and the student will have to re-enroll[cite: 125, 131, 132]."
+  },
+  {
+    "question": "What is the step-by-step procedure for students to request a course freeze, and what information is required?",
+    "answer": "A course can be frozen if a student currently has LMS access[cite: 137]. To freeze, the student contacts the institute and requests to freeze. The student will be asked to send their payment receipt and LMS details to confirm enrollment within the last 6 months, payment of regular fees, and current access[cite: 141]. After confirmation, student details are sent to the admission group, and the admin freezes the course[cite: 142]."
+  },
+  {
+    "question": "What is the step-by-step procedure for students to request a course unfreeze, and what information is required?",
+    "answer": "When a student requests to unfreeze, they are asked for chat screenshots of the freezing request with a visible date[cite: 146]. After confirmation, the student's details are forwarded to the admission group to unfreeze the course for the remaining access duration that was originally left at the time of freezing[cite: 147, 139]."
+  },
+  {
+    "question": "What are the guidelines for students who wish to re-enroll in a course after their access has expired, and are there any special discounts offered?",
+    "answer": "This is subjective and varies case by case[cite: 151]. If a student had a very good valid reason, an additional 50% discount or even free access might be allowed (both options for access till the next immediate attempt)[cite: 151]. Other than such cases, the normal policy of full regular fee for enrollment applies[cite: 152]."
+  },
+  {
+    "question": "How often are study materials/lecture content updated?",
+    "answer": "Syllabus changes are updated by ACCA official sources, normally every year from the September attempt onwards[cite: 157]. The LMS courses and materials are updated once ACCA releases the changes[cite: 158]."
+  },
+  {
+    "question": "Where can students find supplementary materials, handouts, and notes?",
+    "answer": "The materials provided by the institute, such as tests, the MHA book used in lectures, and class notes, are all incorporated in the LMS portal[cite: 162]. These PDFs can be downloaded[cite: 216]. Kaplan/BPP material has to be acquired by students themselves due to copyright issues[cite: 163]."
+  },
+  {
+    "question": "What specific official study texts and exam kits are recommended for each subject?",
+    "answer": "For SBR, students should buy the SBR Kaplan Exam Kit for practice, and can read the Kaplan Study Text if desired[cite: 166, 210]. For F3/FFA, FA1, FA2, students should use both Kaplan and BPP Exam Kits and the BPP Study Text, and also practice from the ACCA study hub[cite: 167, 177, 178]. For F7, students should buy the Kaplan Exam Kit and Study Text and practice from the ACCA study hub[cite: 168, 199, 200]. For F6/TX, students should buy the latest Kaplan Exam Kit FA2024 version, with no need to read the study text, and also practice from the ACCA Study Hub[cite: 188]. Specific study instructions are updated after every quarterly attempt and include details on exam preparation, course material, LMS course approach, WhatsApp group links, and query support TA's contacts[cite: 169]."
+  },
+  {
+    "question": "Are LMS questions available for download as PDFs, or are they only integrated into the LMS portal?",
+    "answer": "PDFs which are attached in the LMS can be downloaded (e.g., class notes, MHA practice book)[cite: 216]. However, the questions themselves are only integrated into the LMS portal[cite: 215]."
+  },
+  {
+    "question": "Do you have general advice on pacing studies for students?",
+    "answer": "Students should watch at least one or two classes every day to finish on time, ideally at least 20 days before the exam, to allow sufficient time for practice[cite: 189, 201, 219, 220]. It is emphasized to be consistent and complete lectures early as it's a big course[cite: 190, 202, 220]."
+  },
+  {
+    "question": "What general recommendations do you provide for the best order to take ACCA papers, particularly for students with exemptions?",
+    "answer": "Students should start a module by choosing those papers first which have good pass rates. For example, in the Skills Module, start with F6/F7/F9. In the Professional Level, start with SBR/SBL[cite: 225, 226]."
+  },
+  {
+    "question": "What is your advice on the feasibility of attempting multiple exams in one session?",
+    "answer": "It depends on the student; if the student can manage multiple papers and has enough time for preparation, it is possible[cite: 230]."
+  },
+  {
+    "question": "What is the process for students to receive personalized counseling for specific papers or their overall ACCA journey?",
+    "answer": "For initial ACCA counseling, students are diverted to a dedicated counselor on WhatsApp[cite: 234]."
+  },
+  {
+    "question": "What is the loyalty discount offered, and what are its conditions?",
+    "answer": "The loyalty discount is 1% per paper, with a maximum cap of 5%. This discount is applicable only on past exams studied with MHA and not on current enrollment."
+  },
+   {
+    "question": "What is the flat discount on Skills and Professional packages for 4 papers?",
+    "answer": "For Skills and Professional packages, there is a flat discount of 10% for 4 papers."
+  },
+  {
+    "question": "Is there a discount offered for 5 papers in the Skills and Professional packages?",
+    "answer": "The provided information does not specify a discount for 5 papers in the Skills and Professional packages. Discounts are listed for 2 papers (5%), 3 papers (7%), and 4 papers (10%)."
+  },
+  {
+    "question": "What is the maximum loyalty discount available and its conditions?",
+    "answer": "The loyalty discount is 1% per paper with a maximum cap of 5%. This discount applies only to past exams studied with MHA and not to current enrollment."
+  },
+  {
+    "question": "What general guidance do you offer regarding ACCA's value in career progression and job prospects at different career stages or ages, and advice on balancing study with employment?",
+    "answer": "There is no generic advice. For these queries, tutors have made dedicated videos on social media that students should refer to[cite: 238]."
+  },
+  {
+    "question": "What are the specific contact numbers (WhatsApp preferred) for query resolution and doubt solving for each subject or relevant department?",
+    "answer": "For F7 Queries/doubts solving: Zarish Anwar (+923235226592)[cite: 194]. For F3/FFA Queries/doubts solving: Zainab (+923102352520)[cite: 172, 244]. For Fa1, Fa2 Queries/doubts solving: Mujtaba Ali (+923272527513)[cite: 174, 245]. For F6 Queries/doubts solving: Maham (+923077921419)[cite: 182]. For SBR Queries/doubts solving: Ahmed Raza (+923122288269)[cite: 204, 247]."
+  },
+  {
+    "question": "Are live sessions typically provided for your courses?",
+    "answer": "No live classes are provided for any course; all are pre-recorded with services[cite: 252]."
+  },
+  {
+    "question": "Please provide direct invitation links to all relevant WhatsApp groups for each subject and exam attempt.",
+    "answer": "WhatsApp group links are: F7 September attempt: https://chat.whatsapp.com/JDdHB97cWMvIzz1jSZhBRW[cite: 196, 256]. F7 December attempt: https://chat.whatsapp.com/GjbZDqhDHsS0PIfC8aI4Ms[cite: 198, 257]. F6/TX September attempt: https://chat.whatsapp.com/H3mdXISs0kv4QSOAzDr7Hv[cite: 184]. F6/TX December attempt: https://chat.whatsapp.com/Ke6obDkPEl5BWjczoQIZ36[cite: 186]. SBR September attempt: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8[cite: 206, 258]. SBR December attempt: https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b[cite: 208]."
+  },
+  {
+    "question": "Assalamu Alaikum, My name is Khalid Muslih. I’m currently based in the UK and I want to start my ACCA journey from the Foundation level. I would like to join the FA1 – Recording Financial Transactions course, and I heard that Sir Teacher teaches this subject. I am a beginner, but I am very serious about learning and passing with strong understanding. Could you please guide me with the registration process, course fee, and how I can join the FA1 batch? JazakAllah khair and thank you for your support.",
+    "answer": "Wslaam Sure"
+  },
+  {
+    "question": "Thank you sir  I want to take the FA1 course. Please confirm: \t1.\tThe fee and how to pay from the UK \t2.\tSteps to register and start the course JazakAllah khair — looking forward to your reply.",
+    "answer": "I am sharing details with you Can you please confirm, whether you understand urdu/Hindi? Or English only?"
+  },
+  {
+    "question": "Yes sir I can speak urdo and Hindi as well I’m waiting for your response",
+    "answer": "Ok fa1 demo links.pdf (file attached) fa1 demo links Online recorded lectures, with query support, questions practice, tests and mock exam. Tuition fee for fa1 is £125. Plus one time admission fee of £50 IMG--WA0022.jpg (file attached) And furthermore, for today only, we are offering a 50% flash sale on tuition fee. For all courses. So if you enroll today, you can avail this offer as well."
+  },
+  {
+    "question": "So all I have to pay 125gbp, right? I’m gonna do it in shallah",
+    "answer": "£113 125 less 50% = £63 Plus £50 admission fee"
+  },
+  {
+    "question": "Thank you for pointing that to me  I’m gonna do it today in shallah  But where? I don’t have the bank account information",
+    "answer": "UK Bank account details .pdf (file attached) UK Bank account details"
+  },
+  {
+    "question": "Dear Sir,  I hope you’re well. My friend was charged only $100 for the same, but I’ve been quoted £125. I was wondering if it would be possible to kindly offer me a similar discount or reconsider the price. Thank you for your understanding and support.",
+    "answer": "PTT--WA0260.opus (file attached) [Transcription]: this is 125 BP and then 50% discount on the original fees so you can pay the successive accounts tuition fees and then plus 50 LBS admission fees if you will include more than the peace will be 125 BP"
+  },
+  {
+    "question": "PAY_27062025_Khalid_M.pdf (file attached) PAY_27062025_Khalid_M Salam Alikom Sir,  I’ve completed the payment. Could you please grant me access to the classes now? Looking forward to getting started. Thank you!",
+    "answer": "Walaikum Salam Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  September /December(choose one):"
+  },
+  {
+    "question": "Name: Khalid Muslih Email ID: khalidmuslih9@gmail.com ACCA Registration Number: Not registered yet – I will register soon. Date of Birth: 11/11/2001 WhatsApp Number (with country code): Student1 Subject: FA1  Language of Lectures: English and Urdo Exam Session: September Sir I’m waiting for the access to join your classes",
+    "answer": "PTT--WA0101.opus (file attached) [Transcription]: yes you will get today in few hours"
+  },
+  {
+    "question": "No worries sir, Thank you Sir I wanna open the link in both, my phone and laptop will that work? Please let me know if that works",
+    "answer": "On one device U can login We have 1 device policy"
+  },
+  {
+    "question": "Salam Alaikom Sir,  I hope you are doing well. I’ve just joined the FA1 course and I noticed that there are 88 activities in the lectures, and each video is over 1 hour long. To be honest, I’m feeling a little confused and wanted to ask for your guidance: \t1.\tWhat is the correct method or structure to follow for these lectures? \t2.\tShould I follow them one by one as listed, or is there a specific plan I should use? \t3.\tHow many videos do you recommend watching per day for effective learning? Also, I just wanted to ask directly: Will everything needed for the FA1 exam be fully taught in these videos including revision and practice questions or are there some parts we need to study by ourselves? Since I’m new to accounting, I really want to understand everything properly from the beginning, so your advice would really help me. JazakAllah khayr for your time and support.",
+    "answer": "*F3/FFA, Fa1. Fa2* *General Instructions:* •For F3 Queries/doubts solving (Zainab): Student1 For Fa1, Fa2 Queries/doubts solving (Mujtaba Ali): Student1 •Handouts and notes file is attached in the LMS \"Course Attachments\" tab. •Do both Kaplan and BPP Exam Kits and BPP Study Text for preparation. Also practice from Acca study hub. Give *tests* after every topic, attached on Lms. After completing preparation, attempt mock."
+  },
+  {
+    "question": "Thank you sir, I hope you’re well. I just wanted to ask, I’m not registered with ACCA yet, so I don’t have access to the ACCA Study Hub. Could you please let me know where I can get the FA1 BPP Study Text, Kaplan, BPP kit, or if it’s available in the LMS? <This message was edited>",
+    "answer": "U have to buy . Or u can find in any acca related group."
+  },
+  {
+    "question": "Where I can buy it sir? I’ll try my best to find it",
+    "answer": "Try finding <This message was edited>"
+  },
+  {
+    "question": "Sir I know you’re busy but please guide me,  I’ve started the FA1 lectures, but I’m not able to find the topic-wise tests on LMS. Could you please tell me where exactly they are located or how I can access them?",
+    "answer": "PTT--WA0120.opus (file attached) [Transcription]: topic wise test attached in test case section may find Karen vahan Nahin Hai To aapko chapter wise chapter ke sath hi mil Jaenge aap LMS portal ki video Banakar 21/05/2025, 1:44 am -"
+  },
+  {
+    "question": "Hi I got a recommendation from one of my friends as he scored 67 marks in SBR . I want to purchase the same for sep . What would be cost ? And the facilities which I'll be provided .",
+    "answer": "Ok sending details *SBR- June attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- Sept attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 You can enroll via above link Right now we are offering 40% off for sept. Fee is 11400 INR after discount null AUD--WA0174.opus (file attached) [Transcription]: now the next question is what I will provide you in my SBR course first of all we will give you detailed recorded lectures which contains theory practical everything secondly will give you revision days of latest past paper practice on software third thing will give you theory support if you have any queries you can ask any time to ask you receptor department fourth and the most important thing will give you mock will conduct your mouth and will mark your mouth and will give you detail feedback and you can also avail this marking facility for separate past paper questions and why this marking facilities important because SBR is 80% theory paper so in past student didn't know what they are writing in the exam so now we will give you proper proper feedback of the feedback of the questions so all these things will be included in my package and you can see my result the results are very very good SBR Demo Links.pdf (file attached) SBR Demo Links.pdf AUD--WA0156.opus (file attached) [Transcription]: OK so the first thing is as we are teaching in like 40 plus countries so there is a time difference in the world like if it is day time in Pakistan so it's night time in United States so because of this time difference we can't gather All students at one time so that's why we give recorded access of our classes to students so that student can watch any time they can watch multiple time and they can study with their own speed and that's why these classes are flexible classes IMG--WA0100.jpg (file attached) [File content] [File content not found] IMG--WA0101.jpg (file attached) [File content] [File content not found] IMG--WA0099.jpg (file attached) [File content] [File content not found]"
+  },
+  {
+    "question": "okay sir till when i can avail this discount ?",
+    "answer": "This month end"
+  },
+  {
+    "question": "Okay sir Thanks . Hi sir classes kitne hours ki hongi may I know please .",
+    "answer": "PTT--WA0052.opus (file attached) [Transcription]: Gramin Bank"
+  },
+  {
+    "question": "Okay sir Hello sir  Will I be able to access classes on my laptop ? As some institutions only allow access on mobile phones .",
+    "answer": "1 device policy. You can choose any one device. At the time of enrollment"
+  },
+  {
+    "question": "Okay Sir thanks",
+    "answer": "Hello.  What's the update of your studies?"
+  },
+  {
+    "question": "Hi sir good evening Still want to purchase SBR  for upcoming quater",
+    "answer": "PTT--WA0040.opus (file attached) [Transcription]: enroll via the above given line you can enroll wire that link and you can start your studies and it is recommended that you should start"
+  },
+  {
+    "question": "Sir I'm appearing for AA for this quarter So currently studying for it.",
+    "answer": "Ok."
+  },
+  {
+    "question": "<Media omitted> I have seen that the discount will be available in June too",
+    "answer": "Yes. Make sure to avail it. Before it ends."
+  },
+  {
+    "question": "Yes sir Will do that",
+    "answer": "Ok."
+  },
+  {
+    "question": "When it will end sir ?",
+    "answer": "In Short time period"
+  },
+  {
+    "question": "date ?",
+    "answer": "Enroll as early as possible."
+  },
+  {
+    "question": "okay sir ! Sir I'm purchasing the classes sir I hv purchased class let me know thw further procedure",
+    "answer": "Have u got the access. Through website u paid?"
+  },
+  {
+    "question": "Yes .",
+    "answer": "Thank you for enrolling with us through our website. Teacher here your tutor. Please confirm that you have got the course access on our Learning management system. Details are sent on email. If you have any queries relating to academics or administrative matters feel free to contact me. *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) : Student2* Save contact of your tutor, Sir Mustafa: Student2 -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *June attempt*: https://chat.whatsapp.com/IRjRcuQeazo0TXiM5kABgi *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam."
+  },
+  {
+    "question": "Sir I got the Access Where I can post my doubts ? And is there any live session which is going to happen ?",
+    "answer": "To the query dept. No live session"
+  },
+  {
+    "question": "Okay Sir Hi sir good afternoon I'm trying to watch a video of IFRS -and IAS -but the video is not running It has been happening for the last 3-days It's not opening just buffering VID--WA0048.mp4 (file attached)",
+    "answer": "Ok wait"
+  },
+  {
+    "question": "Assalam o alaikum These lectures are left? And sir can you please tell me that is there any topic that is highly dependent on any other topic.or all topics  almost independent themselves to watch and practice?",
+    "answer": "No All topics are important and will be tested"
+  },
+  {
+    "question": "Yes sir  I was just asking to make a plan.",
+    "answer": "PTT--WA0058.opus (file attached) [Transcription]: sequence of following sequence or after"
+  },
+  {
+    "question": "Ok sir",
+    "answer": "Thank you for enrolling with us through our website. Teacher here your tutor. Please confirm that you have got the course access on our Learning management system. Details are sent on email. If you have any queries relating to academics or administrative matters feel free to contact me. *F6* *General Instructions:* *•For F6 Queries/doubts solving(Maham): Student3* Save contact of your tutor, Sir Mustafa: Student3 -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *June attempt*: https://chat.whatsapp.com/FlcUP5QCbyh28qbqzRJKxj *September attempt*: https://chat.whatsapp.com/H3mdXISs0kv4QSOAzDr7Hv •Take prinout of the TX MHA Book in the \"Course Attachments\" tab in the LMS.  (will be uploaded soon) •Buy latest Kaplan Exam Kit FA2024 version, no need to read study text. Also practice from Acca Study Hub. •Watch minimum one or two class everyday to finish on time i.e. atleast 20 days before exam, so you would have sufficient time for practice. It's a big course so be consistent and complete lectures early. •After every chapter, give *tests* which are attached in lms for every topic."
+  },
+  {
+    "question": "Yes sir. Sir must the kaplan kit be for finance act 2024? What if I cannot find one? Finance act 2023 is available",
+    "answer": "PTT--WA0122.opus (file attached) [Transcription]: you beta financial 2023 ka Ab Kya Karenge vah to obsolete ho chuka hai vah element syllabus Nahin Hai PTT--WA0123.opus (file attached) [Transcription]: Google find karni padegi finance Sector 24 abhi available nahin hai to aap study Humse practis karne"
+  },
+  {
+    "question": "Ok sir Sir can you tell me where can I find one in karachi?",
+    "answer": "Haq Nawaz Photocopier.vcf (file attached) [File content] [File content not found]"
+  },
+  {
+    "question": "Thank you Sir. IMG--WA0134.jpg (file attached) Assalam o alaikum sir Sir question 7 mei kya PAYE end liability se deduct hoga ya nhi?",
+    "answer": "Walaikum Salam For queries/doubts solving, contact our query support department. F3/FFA: (MANAL) Student3 F7/FR: (ARSALAN ASHFAQ) Student3 F6/TX: (Maham)  Student3 SBR: (Ahmed raza) Student3/04/2025, 12:14 am - Teacher: Ask"
+  },
+  {
+    "question": "Assalam o alaikum sir Sir exam entry confirmation email nhi ayi kaafi time ho gya Last time to within 30 minutes receive go gyi thi That was also weekend day Me ab kya kr sakta hun Myacca mei to exam booked Show ho rha hai",
+    "answer": "Walaikum Salam Its booked then."
+  },
+  {
+    "question": "Thank you. Assalam o alaikum sir Tax exam went well,but for section C I didn't have much time but tried my best it was bit different as well. But hoping for the best JazakAllah sir for your efforts Now I am retaking F7 for Sept session as I couldn't clear it in March session I gave it on self study. Failed at 41 I wanted to ask you that I have kaplan kit that I used then can I use that same kit for Sept as well.it has written June 2025 session on it That's it thank you",
+    "answer": "Wsalam Best of luck for the result"
+  },
+  {
+    "question": "Sir FR k related bhi guide kr dein kindly",
+    "answer": "Yes Ask Elaborate in a message dear"
+  },
+  {
+    "question": ". Stated above sir",
+    "answer": "Were you enrolled with us in f7"
+  },
+  {
+    "question": "No sir I gave on self study PTT--WA0248.opus (file attached) [Transcription]: assalam walekum Sar Mujhe Khali exam kit ke bare mein puchna tha ki use per Jo attempt likhi hai na vah and per June 225 likhi hui hai sirf to mujhe Iske bare mein puchna tha ki main September mein de raha hun to kya uske liye vah valid Hogi aur Mujhe study tax ke bare mein bhi Bata De kindly ke rate to nahin karna padega yaar classes ke bad FIR Khali pet solve kar le to Kahana Hoga please thank",
+    "answer": "Yes valid."
+  },
+  {
+    "question": "Thank you Sir.",
+    "answer": "*F7* *General Instructions:* *For F7 Queries/doubts solving(Arsalan Ashfaq): Student3* Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/JDdHB97cWMvIzz1jSZhBRW *December attempt*: https://chat.whatsapp.com/GjbZDqhDHsS0PIfC8aI4Ms -Take prinout of the FR MHA Book in the \"Course Attachments\" tab in the LMS. Buy Kaplan Exam Kit and Study Text. Also practice from Acca study hub. Watch minimum one or two class everyday to finish on time i.e. atleast 20 days before your exam, so you would have sufficient time for practice. It's a big course so be consistent and complete lectures early. After every chapter give *tests* which are attached in LMS."
+  },
+  {
+    "question": "Assalam o alaikum sir Sir kya exchange of assets IAS 16 mei examinable hai? Study hub pr 1 page hai aur book mei discuss nhi Hua hai? <Media omitted> Sir about this page bta dein",
+    "answer": "Walaikum Salam If it's in study hub then read it. Everything is incorporated in lectures."
+  },
+  {
+    "question": "Aoa sr Sr law ki lecture maljaiegi",
+    "answer": "Walaikum Salam Student4 Sir Owais contact him he teaches"
+  },
+  {
+    "question": "IMG--WA0200.jpg (file attached) [File content] [File content not found] *Full Name: Abdal Nabeel* *Email:darkbutler72@gmail.com* *Paper: F3* *ACCA Registration No:4749483* *Contact: 0333-* PTT--WA0194.opus (file attached) [Transcription]: assalam walekum Sar Mera account already banaa hua hai aapko Sara message nahin kar raha hun ki unfortunately and Saharsa aur Husain Sahab Mera kam kara Nahin sake yah Mera F3 ka January Mein course expire hua tha maine Dobara cal 17 April ko 4:53 p.m. per Dobara payment kiye June Mein paper dena hai to Mera course F3 ka active",
+    "answer": "You will get access tonight"
+  },
+  {
+    "question": "No access",
+    "answer": "Check your portal"
+  },
+  {
+    "question": "Sir kindly extend the expiry date. Course isn't completed yet",
+    "answer": "Which paper When did u pay Send payment receipt"
+  },
+  {
+    "question": "IMG--WA0200.jpg (file attached) [File content] [File content not found] At 17th April *F3* PTT--WA0100.opus (file attached) [Transcription]: assalam walekum sir yah maine aapko screenshot share kar diya 17 April Ko Maine pay kiya tha aur aapane 19th Ki Raat Ko Itna Mujhe access mila tha to Mera syllabus Nahin abhi complete ho chuka to message kiya tha ki mujhe thoda time extend karte hain hopefully 40",
+    "answer": "How much days u want. I can provide one month free extension"
+  },
+  {
+    "question": "This message was deleted *Just 10 more will suffice as per my pace.*   *August 16 2025*",
+    "answer": "30 days maximum extension"
+  },
+  {
+    "question": "Okay Still waiting for activation..",
+    "answer": "Send your lms email id. <This message was edited>"
+  },
+  {
+    "question": "darkbutler72@gmail.com",
+    "answer": "Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures:"
+  },
+  {
+    "question": "PTT--WA0154.opus (file attached) [Transcription]: Sar Maine Aasman Se 22 se baat kar li Thi main Kyunki purana student hun aapka aur Main sari Ek Sath upload nahin kar sakta lekin main half payment kar sakta hun to Agar aapko issue Na Ho To Main half payment kar dunga aur Hasnain aapke sath hi hota hai na sar PTT--WA0155.opus (file attached) [Transcription]: aur Aisa Nahin Hai Ki Main half payment Karunga main Aadi payment aapko Kuchh Din bad Wapas transfer kar",
+    "answer": "PTT--WA0161.opus (file attached) [Transcription]: vitamin Nahin Karte quality Discovery"
+  },
+  {
+    "question": "This message was deleted Sir I have 2 issues, please resolve kar day. 1) I am appearing for september exam but my account expiry time is till june. 2) I have logged in my account in my cell phone and I want to change it to laptop login and it's really annoying to use it in phone, it crashes with every call and the farward and backward button on a vedio is not working properly in my phone. Please sir resolve this issue for me my email   smqasim1998@gmail.com IMG--WA0020.jpg (file attached) and sir this app is not even downloadable in app for macbook I am struggling to even attend a single lecture.",
+    "answer": "In which device you want to login"
+  },
+  {
+    "question": "Samsung s22",
+    "answer": "Ok send your lms email id"
+  },
+  {
+    "question": "Email smqasim1998@gmail.com Password  Student6/05/2025, 12:01 pm - Teacher: Ok Sir meray login access ka kuch bana",
+    "answer": "U can login"
+  },
+  {
+    "question": "On my macbook? Lekin sir macbook k lia tu aap available he nahi hay",
+    "answer": "."
+  },
+  {
+    "question": "PTT--WA0066.opus (file attached) [Transcription]: Salam Walekum Sar yah Apna mere phone mein Sar Bar Bar crash ho raha hai vah tution maine aapke sath resolve kiya tha na discuss kiya tha aur dusri baat hi ki SAR phone per mujhe call Jaati Hai yah Mera mere pass dusra phone bhi nahin hai main change bhi nahin kar sakta Aur Ek Aur yah bhi Kisko Bar Bar Piche karne ke liye na SAR vah phone mein sahi se chalta Nahin Hai Ek to crash ho jata tha aur dusra masala yah Bhi Tha Sar ke matlab phone Mein Jab Main Usko maximize karta hun na to usko Aage aur Piche karne ke liye Teen Char bar press karna padta hai aur button bahut niche Hai To vah Mere phone ka screenshot",
+    "answer": "Whats the exact issue."
+  },
+  {
+    "question": "PTT--WA0080.opus (file attached) [Transcription]: Sar exact issue yah hai ki screen blackout Ho Jaati Hai matlab bilkul vah lecture koi call aati hai na screen blackout Ho Jaati Hai FIR Vahi se lecture start Nahin Hota FIR Mujhe Dobara se aur niche Jo swipe ka button hai na lecture Aage Piche karne ka vah bhi smooth Nahin Hai matlab Kam Nahin Karta Teen Char bar click karna padta hai uske bad vah kam karta hai aur dusra Jab vah Piche ya Aage karna hota hai na vah 10 second ka vah bhi sahi se click Nahin Hota To Ye wali shoes 10 second Piche karne ke liye Mujhe karna padta hai To Mere Liye laptop Se Meri Jaan chhut Jayegi This message was deleted PTT--WA0081.opus (file attached) [Transcription]: Apple ka laptop mere pass to usmein to Aapka Mere Khyal Mein aapane app banvae Nahin uske liye to Fir iska Kya Karunga",
+    "answer": "Send your payment receipt Also lms id."
+  },
+  {
+    "question": "PTT--WA0093.opus (file attached) [Transcription]: Sar payment receipt Maine vah main aapka naam Bata deta hun unko share Ki Thi Aur dusri baat bhi share kar deta hun Dobara PTT--WA0094.opus (file attached) [Transcription]: Hasnain ko Hasnain bhai ko maine sher ki thi payment Welcome to Mirchawala Hub of Accountancy. you can access your course through following details -\tEmail address: smqasim1998@gmail.com  -\tPassword: 420852  You have to access your course through Our Learning Management system, which is available on all operating systems.  Windows App - https://mirchawala.net/mha_windows_app.exe  Android App - https://play.google.com/store/apps/details?id=com.mhalms.techsol360  iOS App - https://apps.apple.com/us/app/mirchawala-lms/id6443606503  If you have any querry in admission process, then you can contact me at this number.  Please note that replies may get delayed due to admission process of other students, We normally reply in 12 hours",
+    "answer": "Ok wait"
+  },
+  {
+    "question": "IMG--WA0054.jpg (file attached) [File content] [File content not found]",
+    "answer": "PTT--WA0055.opus (file attached) [Transcription]: confirm karne ka Math ka exercise chahie unke free permanently aapko Macbook ka hi access Milega vah different courses sign hota hai Macbook ke liye kaun si pura different different"
+  },
+  {
+    "question": "Gee Confirmed .",
+    "answer": "Ok. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Fill this Also send your payment receipt"
+  },
+  {
+    "question": "Syed muhammad Qasim smqasim1998@gmail.com Student6/9/1998 Student6 F6 Urdu/hindi September exam Sir payment reciept hasnain ko share ke the Meray pass say misplace ho gai hay",
+    "answer": "There is no complete payment record of yours Have you cleared your dues"
+  },
+  {
+    "question": "How much is pending? And how much paid If there is an issue regarding payment I will ask my father to clear it.",
+    "answer": "PTT--WA0063.opus (file attached) [Transcription]: Priyamani admission contact number"
+  },
+  {
+    "question": "So wo reply nahi kar rahay ?? Sir",
+    "answer": "Yes."
+  },
+  {
+    "question": "wo reply nahi day raha",
+    "answer": "Your 11000 are dues *Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student6 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA"
+  },
+  {
+    "question": "Sir aap meri fees freeze kar day, meray pass paisay ayengay tu may pay kar k start kar dunga 🙏",
+    "answer": "Ok"
+  },
+  {
+    "question": "PTT--WA0013.opus (file attached) [Transcription]: assalam walekum Sar kaise hain FIR Mujhe account number de de main aapko bakaya payment kar deta hun aap mujhe Macbook ka access De De aur Sar September nahin mujhe 6 mahine ka vah De Kyunki Main job karta hun main slowly slowly padhta Hun To aapki Meherbani Hogi main aapki bakaya vah payment clear kar deta hun Syed muhammad Qasim smqasim1998@gmail.com Student6/9/1998 Student6 F6 Urdu/hindi March null",
+    "answer": "*Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student6 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA Send previous payment receipts as well"
+  },
+  {
+    "question": "Sir I dont have the previous payment reciept It should also be in your record .",
+    "answer": "11000 dues U can pay for access till September attempt"
+  },
+  {
+    "question": "Sir I want a six  month access because I am have a job, and I am going to prepare for it slowly.",
+    "answer": "For that you need to take admission at regular fee Our fee after discount is 22000 *Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student6 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA"
+  },
+  {
+    "question": "Sir i have already paid half without taking classes And half was remaining",
+    "answer": "PTT--WA0047.opus (file attached) [Transcription]: dost Divas supposed to pay after the admission like one month after admission September ke liye admission karna hoga extension policy Nahin"
+  },
+  {
+    "question": "Sir yay tu koi baat na hoi I literally will appear in exam after 6 monts I want my refund Because it is expensive for me I am a job person and i can not pay full fees without appearing in exam baar baar",
+    "answer": "PTT--WA0050.opus (file attached) [Transcription]: Jo aapane initially fees per ki thi vah aap uske liye aapane access le liya tha vah service Samne already consume kar lenge aap FIR Aisa kar sakte hain aap next month se aap start karne for December PTT--WA0051.opus (file attached) [Transcription]: Hamari Koi refund policy Nahin Hoti Hai thank u Also send your latest exam history transcript pdf."
+  },
+  {
+    "question": "PTT--WA0053.opus (file attached) [Transcription]: Sar Maine start nahin kiya maine unko fees jama Karai Thi unko main message per message kar raha tha vah mujhe reply nahin kar rahe the Maine unko yah bhi kaha ki yah Mera access chal Nahin Raha aapka Hindi Mera extend kar de to vah to mujhe reply nahin kar rahe the aur dusri Baat Sar Har Academy Mein Jab aap matlab aap Jab exam dete ho to tabhi aapka vah hota hai na lekin Sar main to do mahine Mein exam de raha hun mujhe reply Nahin a Raha ab Bar Bar karunga PTT--WA0054.opus (file attached) [Transcription]: aur Sar Ko access Mera Kam Nahin kar raha tha main kab se aapke sath Vahi to discuss kar raha tha aapko Maine messages bhi kiye the ki sari access Kam Nahin kar raha Mere laptop per to main yah nahin kar sakta",
+    "answer": "Ok you freezed at that time. Send this. Quick"
+  },
+  {
+    "question": "ExamHistoryTranscript8262637405097226295_221228_222735.pdf (file attached) ExamHistoryTranscript8262637405097226295_221228_222735.pdf",
+    "answer": "No not this Send your latest transcript"
+  },
+  {
+    "question": "PTT--WA0055.opus (file attached) [Transcription]: confirm karne ka Math ka exercise chahie unke free permanently aapko Macbook ka hi access Milega vah different courses sign hota hai Macbook ke liye kaun si pura different different",
+    "answer": "You have to download it right now. From your ACCA portal"
+  },
+  {
+    "question": "PTT--WA0056.opus (file attached) [Transcription]: dusri Baat Sar Mera account freeze Ho Gaya Kyunki Maine annual subscription abhi tak per Nahin Ki Main aapko uska login password bhi bhej deta hun vah login hi nahin ho raha Kyunki Maine subscription pay Nahin Ki Thi abhi tak Bhi Nahin payegi",
+    "answer": "Only then we can proceed further."
+  },
+  {
+    "question": "Asalam alaikom sir Sir f7 lecture chahiyai june attempt kaliya. Fee kitna hai ??",
+    "answer": "Walaikum Salam Sending you details"
+  },
+  {
+    "question": "Ok No response ????",
+    "answer": "*Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student7 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA Fee is 36750 PKR for all these services  We are offering 40% off on this So 22000 after discount Our pass rates are very very good. You'll like our services insha'Allah. AUD--WA0286.opus (file attached) [Transcription]: ok now the next question is what I will provide you in this F7 course first of all will give you detailed recorded lectures which includes theory practical past paper everything secondly will give you revision days with latest past paper practice on software third thing will give you query support if you have any queries regarding the paper you can ask fourth thing will give you testing service after each and every topic there will be a test 5th think we will conduct mock exam and last but not the least the most important thing will give you marking facility for ratio analysis there is a chapter in F7 which is pure theory chapter so you can send your scripts of ratio analysis and will give you detailed feedback on it so all these things are included in our package f7 demo links.pdf (file attached) f7 demo links.pdf IMG--WA0287.jpg (file attached) [File content] [File content not found] IMG--WA0288.jpg (file attached) [File content] [File content not found] IMG--WA0162.jpg (file attached) [File content] [File content not found] AUD--WA0156.opus (file attached) [Transcription]: OK so the first thing is as we are teaching in like 40 plus countries so there is a time difference in the world like if it is day time in Pakistan so it's night time in United States so because of this time difference we can't gather All students at one time so that's why we give recorded access of our classes to students so that student can watch any time they can watch multiple time and they can study with their own speed and that's why these classes are flexible classes"
+  },
+  {
+    "question": "Asalam alaikom Sir kindly f7  ki details share karai",
+    "answer": "Wsalam These are the details"
+  },
+  {
+    "question": "IMG--WA0192.jpg (file attached) Sir kindly share karai muj sai delete hue hai",
+    "answer": "f7 demo links.pdf (file attached) [File content] [File content not found] *Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student7 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA Fee is 36750 PKR for all these services  We are offering 40% off on this So 22000 after discount Our pass rates are very very good. You'll like our services insha'Allah. IMG--WA0187.jpg (file attached) [File content] [File content not found] IMG--WA0186.jpg (file attached) [File content] [File content not found] IMG--WA0185.jpg (file attached) [File content] [File content not found] PTT--WA0121.opus (file attached) [Transcription]: Achcha dekhiae Jaisa ki aapko pata hai ki ham log 40 plus contries Mein padha Rahe Hain To Duniya Mein Ek time ka difference Hai Jaise Agar Pakistan mein bhi din ho raha hai to America Mein Raat Ho Rahi Hai Duniya Mein Kahin alag alag time zone Hai To is vajah se Ham Ek Waqt Mein Sare bacchon Ke Jama nahin kar sakte To Ham bacchon Ko course ka recorded access Dete Hain Taki baccha jab Chahe Pade apni speed se Pade multiple time Dekhe to yah aapko flexibility ke sath recorded lecture Milenge Taki aap apni Marji ke time per padh sake PTT--WA0130.opus (file attached) [Transcription]: Achcha ab yah Sawal yah Paida Hota Hai Ki Ham is course mein aapko kya-kya chijen provide Karenge To Ham ismein aapko sabse pahle detail recorded lectures provide Karenge F7 ke jismein theory practical exam ke past paper practice software practice everything Hogi ok FIR Uske bad Ham aapko provide Karenge revision days with latest past paper or primox solutions Iske alava Ham aapko Teesri chij provide Karenge curry support like Agar aapko Kabhi Koi doubt hoga to aap Hamari support department se poochh sakte hain Iske alava LMS ke andar testing service bhi available hai aap Har chapter ka test bhi apna de sakte hain session can perform Bhi Hoga aur last but not least the most important thing F7 ke andar Ek area interpretation of financial statement that is ratio analysis theory bacchon ko problem IMG--WA0162.jpg (file attached) [File content] [File content not found]"
+  },
+  {
+    "question": "<Media omitted> Asalam alaikom sir.  Sir ye IAS 33 kai lectures play nahi hurahi sir <Media omitted> PTT--WA0005.opus (file attached) [Transcription]: Sar yah screen ke topper bhi yah loaded please wait a Raha Hai Sar vate Bhi Kiya lekin Fir Bhi Nahin ho raha Sar Abhi dekh le kya masala hai PTT--WA0006.opus (file attached) [Transcription]: Saraswati IAS Jo 33 hai na isliye Nahin Ho Raha Hai Sar aur Baki lecture sahi hai vah play ho raha hai yah 16 bhi play Ho Raha Hai Sar maine aapko video bhejiye yah video aap dekh le Sab aapko andaza ho jaega ki kya matlab hai",
+    "answer": "Restart the app Then let me know"
+  },
+  {
+    "question": "Asalam alaikom sir <This message was edited> Sir fr kai course mai koi changes report hui hai kai nahiii",
+    "answer": "Wsalam All changes incorporated in lms"
+  },
+  {
+    "question": "Ok sir Asalam alaikom sir",
+    "answer": "Wsalam"
+  },
+  {
+    "question": "Sir fr queries support kon manage karta hai. Sir number bej dai.    Delete hwa hai number muj sai",
+    "answer": "Send your lms email id and payment receipt of f3"
+  },
+  {
+    "question": "Welcome to Mirchawala Hub of Accountancy. you can access your course through following details -\tEmail address: mahnoorpirzadi242@gmail.com  -\tPassword: 768544  You have to access your course through Our Learning Management system, which is available on all operating systems.  Windows App - https://mirchawala.net/mha_windows_app.exe  Android App - https://play.google.com/store/apps/details?id=com.mhalms.techsol360  iOS App - https://apps.apple.com/us/app/mirchawala-lms/id6443606503  If you have any querry in admission process, then you can contact me at this number.  Please note that replies may get delayed due to admission process of other students, We normally reply in 12 hours PTT--WA0039.opus (file attached) [Transcription]: Servo payment receiver se delete Hua Hai Maine mobile change kiya tha to delete ho gaya tha Sar vah number 2050 delete",
+    "answer": "What is your name?"
+  },
+  {
+    "question": "mera shahid  name hai",
+    "answer": "*F7* *General Instructions:* *For F7 Queries/doubts solving(Arsalan Ashfaq): Student7* Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/JDdHB97cWMvIzz1jSZhBRW *December attempt*: https://chat.whatsapp.com/GjbZDqhDHsS0PIfC8aI4Ms -Take prinout of the FR MHA Book in the \"Course Attachments\" tab in the LMS. Buy Kaplan Exam Kit and Study Text. Also practice from Acca study hub. Watch minimum one or two class everyday to finish on time i.e. atleast 20 days before your exam, so you would have sufficient time for practice. It's a big course so be consistent and complete lectures early. After every chapter give *tests* which are attached in LMS. Query support"
+  },
+  {
+    "question": "This message was deleted Asalam alaikom sir Sir lecture purchase karny hai mujai. F7 kai. Plzz details share karai",
+    "answer": "*Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student7 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA"
+  },
+  {
+    "question": "F 7.  Fee ?",
+    "answer": "22000 after discount"
+  },
+  {
+    "question": "PTT--WA0045.opus (file attached) [Transcription]: six ka lecture liya tha June attempt 2024 ke liye Aisa lekin usmein time lag gaya tha mera Jiski vajah se sirf Maine usko thoda sa ko chhodkar payment ki taiyari Shuru kar dijiye Sar aap usko 6 mahine almost Ho chuke hain and abhi main June mein time 2025 Mein Inshallah dene ja raha hun to Sar aap mere pass 2 mahine ki April ka mahine Mein pura nahin hai aur Main ka pura and half month mein Kis Tarah Se prepaid Karun Kya Main Sar access ke paper do paper Lekar Chala Tha To Mere Liye Kyunki donon suggest honi chahie Jisko main apply",
+    "answer": "Wsalam Now syllabus changed You need to retake the course"
+  },
+  {
+    "question": "IMG--WA0052.jpg (file attached) [File content] [File content not found] PTT--WA0053.opus (file attached) [Transcription]: Sar Maine course le liya hai Samsung liya tha maine answer Yahan per yah likha hua mention for exam june 2025 to March 26 preparation kar raha hun yah applicable",
+    "answer": "Yes Are U in group"
+  },
+  {
+    "question": "PTT--WA0054.opus (file attached) [Transcription]: yes sir I am in the group my friend added me to this group PTT--WA0055.opus (file attached) [Transcription]: he is also taking graphics paper so she gave me the link of the WhatsApp and I just join it Sir what are the changes?",
+    "answer": "Already incorporated in lectures Follow lms"
+  },
+  {
+    "question": "Ok PTT--WA0062.opus (file attached) [Transcription]: Sar Mujhe app sex ka exam Dena chahie jabki mere pass abhi Dedh mahine baki hai aur Pichhle Jab Maine last time Kiya To usmein Mujhe attempt lag chuka hai to Sar abhi Dedh Mahina hai aur lectures bhi acche Shuru thoda sa ki hai maine apne start hi nahin kiya Sar Ramzan bich Mein Tha to use vajah se Thodi Sasti hoti Thi lekin Sar aap mujhe bataenge Uska Kya solution hai ki vajah Mujhe Dena chahie Nahin Dena chahie aur Agar Nahin dena ?",
+    "answer": "Give f6 only. In June attempt  If U start now and be consistent daily, you can easily cover Do continuous revision as well, as tax is a memory based paper"
+  },
+  {
+    "question": "Sir PTT--WA0150.opus (file attached) [Transcription]: Southern what should be the strategy if I will be giving exam in June 2025",
+    "answer": "PTT--WA0005.opus (file attached) [Transcription]: make sure to complete the classes before 1520 days before exam so you can easily complete the cat and remaining time and you don't need to have read the study text because it's not compulsory but you have to solve the exam get properly caption exam kit and also study of questions it's very effective ok so try to complete the lectures before 1520"
+  },
+  {
+    "question": "Sir f6 lecture are not working It is continously showing error ? IMG--WA0131.jpg (file attached) [File content] [File content not found]",
+    "answer": "Is this resolved Student8/04/2025, 10:46 pm - Student8: yes sir now it is resolved"
+  },
+  {
+    "question": "jazakAllah aslam walikum sir sir I have completed lecture till inheritance lec without kit so sir suggest me that I should opt for exam or not ? sir please do suggest because your suggestion will mine motivation",
+    "answer": "Walaikum Salam If u can complete lectures 15 days before exam. Then go for it. Don't waste attempt"
+  },
+  {
+    "question": "Aslam walikum sir Sir i need 30 to 40 days lecture of f6 Previously i took your lec for 6 month for june attempt unfortunately due to personal issue don't gave my exam",
+    "answer": "Walaikum Salam When did u pay send payment receipt"
+  },
+  {
+    "question": "IMG--WA0031.jpg (file attached) [File content] [File content not found]",
+    "answer": "U have to re enroll."
+  },
+  {
+    "question": "Sir is  this second time payement of 15000 <This message was edited> PTT--WA0015.opus (file attached) [Transcription]: sir kindly after 30 to 40 days ka Axis ka lectures exchange problems",
+    "answer": "Send all receipt"
+  },
+  {
+    "question": "PTT--WA0034.opus (file attached) [Transcription]: Salam Walekum sir due to purchasing of my new mobile I just lost my data and I have only this data available of 15000 because it is recently in December I just purchase and others and do the transaction social kindly give me the 40 days 30 to 40 days class thank you so much",
+    "answer": "Please note that there is no extension policy. If you wish to continue, you will need to reapply for admission at the regular fee. Currently, we are offering a 40% discount on the regular fee. The fee, after the discount, is 22,000 Pkr per paper for skill level courses. For more information regarding fees and enrollment, please visit our website at admissions.mirchawala.com or contact our administration team. We will now close the chat. Thank you."
+  },
+  {
+    "question": "IMG--WA0031.jpg (file attached) [File content] [File content not found] IMG--WA0002.jpg (file attached) [File content] [File content not found] Sir approve I have paid twice Of f6 So sir please extend my f6 for 1 month",
+    "answer": "This is final. And kindly avoid sharing irrelevant receipts. This is not for f6."
+  },
+  {
+    "question": "sir this is not irrelevant receipt I just pay 25000 amount but sir if you belief that this irrelevant so sir you may check f6 WhatsApp group also ? for sep 2024 attempt",
+    "answer": "This is old. Not in 2025 record Ok this is 2024. Kindly read this dear. Best of luck for your studies."
+  },
+  {
+    "question": "sir this my second time payment of f6 for June2025  attempt which I don't gave sir please it request This message was deleted This message was deleted PTT--WA0045.opus (file attached) [Transcription]: six ka lecture liya tha June attempt 2024 ke liye Aisa lekin usmein time lag gaya tha mera Jiski vajah se sirf Maine usko thoda sa ko chhodkar payment ki taiyari Shuru kar dijiye Sar aap usko 6 mahine almost Ho chuke hain and abhi main June mein time 2025 Mein Inshallah dene ja raha hun to Sar aap mere pass 2 mahine ki April ka mahine Mein pura nahin hai aur Main ka pura and half month mein Kis Tarah Se prepaid Karun Kya Main Sar access ke paper do paper Lekar Chala Tha To Mere Liye Kyunki donon suggest honi chahie Jisko main apply",
+    "answer": "Ask query support"
+  },
+  {
+    "question": "she is not responding",
+    "answer": "Yes she'll get back to you once available As there are other student queries also"
+  },
+  {
+    "question": "Salamalikum Sir Sir hope you are doing well.🙏 i'm Rahman rahimi. student of Sir ahmad shafi, i have studied F2 with ahmad shafi. i want to take F3 online classes with you sir. is it available in English language?",
+    "answer": "Walaikum Salam Sending you details U understand urdu hindi? *Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student9 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA 18k fees. We will provide your query dept. detailed recorded lectures. Tests and mock facility f3 demo links.pdf (file attached) f3 demo links"
+  },
+  {
+    "question": "No sir Only English classes English recorded lectures?",
+    "answer": "Yes.deae"
+  },
+  {
+    "question": "i have deposited Fee to ur Afghanistan representative Javid iqbal when i studied F2 from Sir ahmad shafi. is it okay to deposit fee To this guy again? Javed Ludin marchawala Representative.vcf (file attached) [File content] [File content not found] i have reffered ahmad shafi to this guy for fee deposit.me and my friend deposited fee to this guy.",
+    "answer": "Yes. Pay to him 18000 pkr"
+  },
+  {
+    "question": "Discount 🙏🥰 okay",
+    "answer": "This is after discount."
+  },
+  {
+    "question": "Okay tomorrow i will deposit fee,inshullah. salam sir Fee deposited",
+    "answer": "Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one):"
+  },
+  {
+    "question": "Please provide following details for Lms: Name:Rahmangul Email id:rahmangulrahimi131@gmail.com ACCA registration number: 6446996 Date of birth:23/10/1995 Whatsapp number (with country code):Student9 Subject:F3 Language of lectures:English Exam session in which you will give exam, after which access to video lectures will expire: September (End of July) June/Sept (choose one):",
+    "answer": "Ok"
+  },
+  {
+    "question": "Sorry Sir, if possible extend Expire date till end of july if possible. now its show me 5th of july STK--WA0064.webp (file attached)",
+    "answer": "Yes"
+  },
+  {
+    "question": "Hello Sir i have some problem in lms i cant save vedios to offline mode during the lecture i faced with lot of disturbance stop and resume then stop in resume because of internet problem now download option never appear",
+    "answer": "PTT--WA0067.opus (file attached) [Transcription]: because of your internet problem and the download option is there available"
+  },
+  {
+    "question": "Respected Sir, please if possible active downlaod option again for us. lot of students have problem of internet. we save lectures in good internet connection then i watch it very calm evrywhere i want. 🙏🥰🥰 for a few days i watch lectures with lot of disturbance. because of internet. 😢 <Media omitted>",
+    "answer": "It will be available in few time."
+  },
+  {
+    "question": "salam respected Sir, Eid mubark. wish u long life.🙏🥰",
+    "answer": "Eid Mubarak. Thanks for remembering me."
+  },
+  {
+    "question": "Salam sir hope you doing well. One of my friend Hazratullah hazeq want to study  F7 with you. i will give ur contact details to him. inshullah he will contact u soon.",
+    "answer": "Walaikum Salam Sure Connect with me."
+  },
+  {
+    "question": "👍 Javed Ludin marchawala Representative.vcf (file attached) [File content] [File content not found] Sir he will deposit tuition fee to this guy is it ok?",
+    "answer": "Yes. 15/05/2025, 7:32 pm - 15/05/2025, 7:32 pm - Disappearing messages were turned off. Tap to change."
+  },
+  {
+    "question": "aoa sir",
+    "answer": "وعليكم اسلام ورحمة الله وبركاته."
+  },
+  {
+    "question": "sir i wanted to ask that when we came to the dubai meetup one sir took our number and email address and told us that he will add in WhatsApp group i think to interact with other fellow learners but he didn't till now",
+    "answer": "Sir owais. I think"
+  },
+  {
+    "question": "no sir",
+    "answer": "Student10/05/2025, 11:55 pm - Teacher: His no."
+  },
+  {
+    "question": "i think sir kalim who came to the meetup Aoa sir For FR what materials will be provided by you",
+    "answer": "Walaikum Salam Mha handout book. Kaplan kit study text u have to buy"
+  },
+  {
+    "question": "Ok sir Kaplan kit also Is it your notes sir",
+    "answer": "Yes."
+  },
+  {
+    "question": "And Kaplan kit will be required",
+    "answer": "Yes."
+  },
+  {
+    "question": "Ok sir Sir I have given PM yesterday So kindly recommend which paper I should do next",
+    "answer": "Which exams left in skills level."
+  },
+  {
+    "question": "Other than law and Pm every else",
+    "answer": "Go for f7. F7 has highest passing rate among all skills level exams"
+  },
+  {
+    "question": "How much pass rate",
+    "answer": "<Media omitted> f7 demo links.pdf Right now we are offering 40% off for September attempt  Enroll through above link <Media omitted> UAE Bank Account Details Fees is 440 AED each paper After 40% off. We are offering <Media omitted> <Media omitted> IMG--WA0186.jpg (file attached) [File content] [File content not found] IMG--WA0185.jpg (file attached) [File content] [File content not found] <Media omitted> <Media omitted>"
+  },
+  {
+    "question": "Sir I am in UAE and I am from Pakistan I had met you in the meet up in Dubai",
+    "answer": "PTT--WA0080.opus (file attached) [Transcription]: ji ji bilkul bilkul bilkul bilkul"
+  },
+  {
+    "question": "Sir weekly live sessions will be conducted For past papers Sir will you assist directly on queries",
+    "answer": "Query support will handle PTT--WA0086.opus (file attached) [Transcription]: I have uploaded many possible classes in my YouTube and my elements as well as on YouTube so they want any live session I will upload more classes in the portal if I"
+  },
+  {
+    "question": "Ok If I am not able to understand something from them so will you answer those queries",
+    "answer": "PTT--WA0041.opus (file attached) [Transcription]: aisa hota nahin hai beta Kyunki vah bahut expert log hote hain sabse Pahli chij to yah ki Mere lectures itne detailed hote hain na usmein bahut detail Mein cover karaya Jata aur aap mera sirf demo class Dekho Mera teaching style to sabse Jyada famous Hai Nahin jo bhi baccha feedback Deta Hai vah teaching style per sabse pahle Deta Hai To Kaise aur yah pahli bar Thodi aapse pahle hajaron bacchon Karunga Ab To 2016 17 se bacche online to Lakhon log padh chuke hain to yah bahut smooth hue hai aur bahut aaram se ho jata hai koi Itna Darne wali baat nahin hai balki support padhani Nahin chahie dependent professional life mein job karte ho na to job main aapka employer kis employee ko Pasand karta hai jo Khud Se Kam Karen employees ko Pasand karta hun jo independent studies ka concept department"
+  },
+  {
+    "question": "Yes sir understood I read your students feedback from FR paper for June attempt And I was very happy to read those So I think I will go with you BPP kit can also be done for practcie",
+    "answer": "Don’t worry. PTT--WA0044.opus (file attached) [Transcription]: agar aap Chaho to BP wicket kar lo Varna Nind Nahin Hoti kya plane ki kit plus study hub kar lo to more than enough aaram se ho raha PTT--WA0045.opus (file attached) [Transcription]: lekin sabse important chij hai beta ki agar aapane paper clear karna hai to uske liye course time per complete karna ho to course time per complete tab Hota Hai Jab time per start hota hai to aapko immediate start karo Taki aapka and Mein burden kam"
+  },
+  {
+    "question": "Yes sir Okay sir Yes sir actually after Eid I am planning to start As I am usually studying for 6-hours per day so I think it is enough So Kaplan study text and Kaplan exam kit required to purchase?",
+    "answer": "PTT--WA0073.opus (file attached) [Transcription]: captain cricket upcoming PTT--WA0074.opus (file attached) [Transcription]: [Transcription failed: ]"
+  },
+  {
+    "question": "Ji sir Aaj Eid hai sir InshaAllah start karo gi So sir you are telling to purchase both Kaplan study text and Kaplan exam kit Am I right?",
+    "answer": "Yes."
+  },
+  {
+    "question": "Ok And your MHA book can be printed",
+    "answer": "it's uploaded on portal. Also available in mha book shop"
+  },
+  {
+    "question": "Yes sir Aoa sir I am starting with you only InshaAllah As I have already had a good experience with mirchawala In your institute this bookshop sir?",
+    "answer": "Yes Download it from portal And Kaplan kit U need to get yourself"
+  },
+  {
+    "question": "Yea I will enroll And study text as well as you mentioned",
+    "answer": "Which paper."
+  },
+  {
+    "question": "F7 as you mentioned that i should go for F7 after Law and PM",
+    "answer": "Sending you details. PTT--WA0016.opus (file attached) [Transcription]: share the details of your above so you can pay the fees in this account then you can"
+  },
+  {
+    "question": "Sir I cannot pay online on the portal Like we do on the mirchawala website PTT--WA0036.opus (file attached) [Transcription]: Jara Mujhe Kahani Bata De Ki Main log Mirza Wala ki website per hai main vahan directly purchase kar sakti hun ya maine aapke account mein bank transfer karvana Hai Kahin jaldi confirm Karke aap mujhe please bata de FIR Main Apne Baba Ko Kya Kiya Agar transfer ki jarurat hai main Karva do Varna portal paper mein kar deti hun website per",
+    "answer": "Pay in this account PTT--WA0038.opus (file attached) [Transcription]: photograph ko agar aap Koi difficulty switch karni hai mere sawalon ki website"
+  },
+  {
+    "question": "PTT--WA0039.opus (file attached) [Transcription]: Sar payment has been done on the mediaeval website so the access has come I will be starting soon ok access come I will be starting soon thank you sir do send your query support numbers and we can make notes or write your lectures in our register i know you have provided the slides but still can we?",
+    "answer": "Ok. Got it Have u got the access Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): If not then fill this in one message. Yes yes make notes *F7* *General Instructions:* *For F7 Queries/doubts solving(Arsalan Ashfaq): Student10* Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/JDdHB97cWMvIzz1jSZhBRW *December attempt*: https://chat.whatsapp.com/GjbZDqhDHsS0PIfC8aI4Ms -Take prinout of the FR MHA Book in the \"Course Attachments\" tab in the LMS. Buy Kaplan Exam Kit and Study Text. Also practice from Acca study hub. Watch minimum one or two class everyday to finish on time i.e. atleast 20 days before your exam, so you would have sufficient time for practice. It's a big course so be consistent and complete lectures early. After every chapter give *tests* which are attached in LMS."
+  },
+  {
+    "question": "yes so study hub after each chapter like i have started earnings per share so after all lectures of this read study text and study hub and sir will you solve kit in lectures or i have to do",
+    "answer": "Thank you for enrolling with us through our website. Teacher here your tutor. Please confirm that you have got the course access on our Learning management system. Details are sent on email. If you have any queries relating to academics or administrative matters feel free to contact me. Yes also kit alongside"
+  },
+  {
+    "question": "yes sir yes i have got the course access and sir for study hub we should do both MCQs and MTQ's",
+    "answer": "Yes."
+  },
+  {
+    "question": "sir do you have updated study text and exam kit",
+    "answer": "Can't share due to copyright issues"
+  },
+  {
+    "question": "But sir I am not able to purchase it here as it is out of stock Sir is 2024-same as 2025-10/06/2025, 11:45 am - Teacher: No But sir your query support told me like this",
+    "answer": "When u wanna give ur paper PTT--WA0074.opus (file attached) [Transcription]: [Transcription failed: ]"
+  },
+  {
+    "question": "September attempt",
+    "answer": "PTT--WA0075.opus (file attached) [Transcription]: han September attempt Mein 24:25 fiscal year he ACC exam Karega Kyunki ACC 1 Sal Piche chalta hai beta PTT--WA0076.opus (file attached) [Transcription]: aapko jo course ka access Mila Hoga vah 24:25 Mein Mila"
+  },
+  {
+    "question": "G sir So I can use that books As I have got it Printout I will take or if old edition is available I will take that <Media omitted> FR_Exam_Kit_2024-_ISDC.pdf <Media omitted> FR - ST (23-)-.pdf sir these two are the books kindly let me know if it is okay as i have to take printout",
+    "answer": "Use latest."
+  },
+  {
+    "question": "PTT--WA0003.opus (file attached) [Transcription]: Sar Maine Vahi to aapko kaha hai ki mere pass sirf 2024 and 2025 ka hai aur donon vahi hai aur aapki Jo query support Hai unhone bhi hai ki main yah istemal kar sakti hun Kyunki Koi Khas changes nahin hai sirf wordings ka Hi Hai Bahar available Nahin Hai unko bhi time lagega gane mein jo updated Hai To Maine ab yah print Karva liya yah donon with your notes on Mujhe 23 update kar liya to Ab Main Nahin kar sakti Because I have printed these above books now With your FR book Because your query support said it is okay to use these books Aoa sir PTT--WA0074.opus (file attached) [Transcription]: [Transcription failed: ]",
+    "answer": "You need to practice from Kaplan kit and study hub Not MHA book"
+  },
+  {
+    "question": "Yes But in that there are some exam kit I am doing these side by side of each IAD IAS aoa sir for inventory valuation topic in lecture there is no pdf shared can you share the pdf of the notes which sir write like he has shared for other",
+    "answer": "U need to copy it down. Or take pics"
+  },
+  {
+    "question": "Okay sir You cannot need pdf if available with you Aoa sir The new IFRS 18 when will it be updated on the portal As it is mentioned in the syllabus",
+    "answer": "Yes. I will update"
+  },
+  {
+    "question": "Ok sir Aoa IMG--WA0058.jpg (file attached) [File content] [File content not found] Can you explain this question",
+    "answer": "Ask query dept"
+  },
+  {
+    "question": "I have asked He hasn’t replied till now",
+    "answer": "Let me ask."
+  },
+  {
+    "question": "Yes sir please Sir do you have lms questions pdfs",
+    "answer": "Which pdf"
+  },
+  {
+    "question": "For the test LMs questions",
+    "answer": "No they are only integrated in lms portal"
+  },
+  {
+    "question": "Aoa sir Kindly share the IFRS-slides for the lectures uploaded on lms",
+    "answer": "You deleted this message You deleted this message They are uploaded already. On lms"
+  },
+  {
+    "question": "yes i saw now sir thank you and for IAS-there are no slides available as the questions done in the lms i am not able to see through in the exam kit i have",
+    "answer": "Will check this. Right now take picture."
+  },
+  {
+    "question": "PTT--WA0002.opus (file attached) [Transcription]: answer for how far is 13 I have done fair value measurement there are some points like financial liability like after that there are two slides which have not explained so I am not sure how to go with it because there is not much information in the given the textbook I'm not sure which of two three pages given different different may be 140 and some 405 Rs 15 13 so not sure",
+    "answer": "Thats Not in your syllabus scope"
+  },
+  {
+    "question": "Oh ok",
+    "answer": "*Pls transfer subject fee in below mentioned account. FOR LOCAL PAYMENTS ONLY, NO INTERNATIONAL REMITTANCE. After payment pls share screenshot with us. Also note fee paid is non refundable and non transferable to other subjects* *MHA Official Bank Account Details*: Bank Alfalah Account Title: Mirchawala Hub of Accountancy Branch code: 0016 Account No. Student11 IBAN No. PK60ALFH0016001007554802 Swift code: ALFHPKKA Pay in this account You deleted this message 18000 This is the final fee after max discount. Non-negotiable. Offer is valid for today 27th June only. Best of luck for your studies. The original fee is 36,750. Visit our website for info and Enrollment: admissions.mirchawala.com Or contact admin dept. We'll now close the chat. Thanks Now changed few months ago. This is the updated fee Yes Pls ask ? Yes good Means PTT--WA0280.opus (file attached) [Transcription]: there please send the previous chat screenshot as I don't have previous chat so can you please send the previous search screenshot so I can see At which date u paid. send payment receipt Ok giving you extension till June attempt. Int. Previous chats isn't loading. Send payment receipt Already extension was provided to you earlier There's no further extension policy on this You need to re-enroll Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza)* -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "??",
+    "answer": "? Yes good Means PTT--WA0280.opus (file attached) [Transcription]: there please send the previous chat screenshot as I don't have previous chat so can you please send the previous search screenshot so I can see At which date u paid. send payment receipt Ok giving you extension till June attempt. Int. Previous chats isn't loading. Send payment receipt Already extension was provided to you earlier There's no further extension policy on this You need to re-enroll Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :* -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "?",
+    "answer": "Yes good Means PTT--WA0280.opus (file attached) [Transcription]: there please send the previous chat screenshot as I don't have previous chat so can you please send the previous search screenshot so I can see At which date u paid. send payment receipt Ok giving you extension till June attempt. Int. Previous chats isn't loading. Send payment receipt Already extension was provided to you earlier There's no further extension policy on this You need to re-enroll Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :  * -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Thanks you sir Hello Sir, The SBR version is International or UK ? I want to book for June exam sir",
+    "answer": "Int. Previous chats isn't loading. Send payment receipt Already extension was provided to you earlier There's no further extension policy on this You need to re-enroll Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :  * -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Thanks boss Good day Sir, I have relocated back to Africa Sierra Leone. Hence I have so much stuff to settle. I have different my June exam to September.  Just want to update you Sir. Regards Hello sir Can re- register  for SBR I didn’t able to do the exam. I think I have time for September or December.. So please let me have class for December session?",
+    "answer": "Previous chats isn't loading. Send payment receipt Already extension was provided to you earlier There's no further extension policy on this You need to re-enroll Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :  * -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Ok sir. Please share payment link . Can you offer me discount for this please ? Also please be reminded that this is for September OR December 2025 session. Thanks 🙏",
+    "answer": "Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link *SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :  * -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Right now 40% off available U can either opt for sept or Dec attempt *SBR- September attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26388 English:https://admissions.mirchawala.com/?add-to-cart=26378 *SBR- December attempt*: Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404 English: https://admissions.mirchawala.com/?add-to-cart=26395 Enroll via above link",
+    "answer": "*SBR* *Important Instructions:* *•For SBR Queries/doubts solving (Ahmed Raza) :  * -Join whatsapp group for the attempt you are enrolled in: (*Only join one group*) *September attempt*: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8 *December attempt:* https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b •Take printout of the MHA book in the \"Course Attachments\" tab in the LMS. •Buy SBR Kaplan Exam Kit for practice and you don't have to read study text for this exam, but if you want to, read Kaplan Study Text. •Watch at least one class everyday. Complete lectures *as soon as possible* and move to questions practice and reading technical articles available on ACCA Website. These two are the main things for passing this exam. Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Salam sir, My friend is planning to start his ACCA studies and has exemptions for the first four papers. He wants to know the best order to take his exams. Should he start with F5 and then move on to F6, or is it better to follow a different sequence based on which ones are easier? Thank you",
+    "answer": "Hi. What's the update of your studies. The 40% discount offer is ending soon, do avail it. Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Asalam alikum sir, waiting for salary to come inshallah then Also sir I want to ask if it is possible to do both exams in june?",
+    "answer": "Yes it's possible.  But don't delay now. Start immediately IMG--WA0161.jpg (file attached) [File content] [File content not found] Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Can i send money to this account to get 50% off?",
+    "answer": "Yes Kindly send payment pic. We need a payment proof Without it we can't track the payment Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  June/Sept (choose one): Ok Walaikum Salam  We provide one Device access this is our policy We have to pay to our software charges for each access. There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "How much are they? If its not much i will pay for it but if its more than sabar krloga",
+    "answer": "There's separate regular fee dear. For new access *F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "*F6/TX-  June attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26344 English: https://admissions.mirchawala.com/?add-to-cart=26343 *F6/TX- Sept attempt* Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26364 English: https://admissions.mirchawala.com/?add-to-cart=26363 Visit our website for info and enrollment",
+    "answer": "Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "That's like buying another course?",
+    "answer": "Yee All incorporated in lms lectures Which paper Send your payment receipt Freeze now. Then later unfreeze it after june attempt. Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "How to do it?",
+    "answer": "Send your lms id. <Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  },
+  {
+    "question": "Welcome to Mirchawala Hub of Accountancy. you can access your course through following details -\tEmail address: Saj_khattak@hotmail.com  -\tPassword: 249202  You have to access your course through Our Learning Management system, which is available on all operating systems.  Windows App - https://mirchawala.net/mha_windows_app.exe  Android App - https://play.google.com/store/apps/details?id=com.mhalms.techsol360  iOS App - https://apps.apple.com/us/app/mirchawala-lms/id6443606503  If you have any querry in admission process, then you can contact me at this number.  Please note that replies may get delayed due to admission process of other students, We normally reply in 12 hours Ye hy sir June k bad may pir contact kro to unfreeze it?",
+    "answer": "<Media omitted> If u have any friends in barmingham. Pls inform.  It’s a good networking event. London meetup on Saturday. Will send u message for that IMG--WA0170.jpg (file attached) [File content] [File content not found] New location for London meetup.  COSTA COFFEE SHELTON STREET 39. Pls come. Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  Sept Ok"
+  }
+]
