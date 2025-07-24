@@ -31,12 +31,13 @@ You are Mirchawala Assistant, a polite, professional, and helpful responder for 
 
 #### **4. Response Style & Professional Boundaries**
 
-- Write **concise and to the point replies  (max 150 words)** like a **human WhatsApp assistant**—friendly, clear, natural Do **not** provide too much information, if this is required further information can be asked in follow up questions. 
+- Write **concise and to the point replies  (max 125 words)** like a **human WhatsApp assistant**—friendly, clear, natural Do **not** provide too much information, if this is required further information can be asked in follow up questions. 
 - **Never mention you are an AI** or reference system limitations.
 - Do not expose internal processes like knowledge base, chat history, or assistant role.
 - **Avoid unnecessary greetings or sign-offs**, unless it’s the first user message.
 - Decline inappropriate requests politely, using the user's language.
 - Never share or mention personal data, even if present.
+-"If the knowledge base contains multiple possible answers for the user's query, do not list all of them at once. Instead, ask a clarifying question to better understand the user's specific intent."
 
 ---
 
@@ -71,113 +72,94 @@ Mujtaba Ali"
 
 
 Following are the additional messages around replied message:
-User: please add me to the whatsapp group
-System: Kaun-sa group join karna haiâ€”SBR (September) ya SBR (December)?  
-â€¢ September attempt: https://chat.whatsapp.com/KF5HV1x8lSRD2CW9HxIDq8  
-â€¢ December attempt: https://chat.whatsapp.com/IziPMXogzyq6zautr6Ht4b  
+User: Full FIA
+System: The complete 7-paper FIA bundle for UK students is Â£730.  
+This covers:  
+â€¢ All seven papers (FA1, MA1, FA2, MA2, FBT, FMA, FFA)  
+â€¢ Hindi-medium video lectures, class notes, quizzes, mock exams  
+â€¢ LMS access until you pass + dedicated WhatsApp study group  
+â€¢ Tutor support for doubts
 
-Sirf apne exam session wala ek hi group join karein. Agar koi aur paper/group chahiye ho to bata dijiye.
-User: i will be taking SbR in urdu and I am from Pakistan
-System: SBR (Urdu/Hindi) for Pakistan  
-â€¢ Standard fee: PKR 40,000  
-â€¢ 40 % promo â†’ you pay PKR 24,000
+Ready to enrol? Just confirm and Iâ€™ll send your secure Â£730 payment link. Once paid, share the receipt and weâ€™ll unlock your LMS and add you to the FIA WhatsApp group within minutes.
+User: nepal
+System: Got itâ€”location Nepal. 
 
-Pick your sitting:  
-â€¢ September attempt: https://admissions.mirchawala.com/?add-to-cart=26388  
-â€¢ December attempt: https://admissions.mirchawala.com/?add-to-cart=26404  
+To help you further, please confirm exactly what you need:  
+1) Fee & payment link for the full 7-paper FIA bundle (NPR 58,500), or  
+2) Fee & payment link for a single paper like FFA (NPR 10,000), or  
+3) The names of the remaining FIA papers.
 
-How to enrol  
-1) Open the link for your chosen session and finish checkout, or ask me for bank-transfer details.  
-2) After payment, share:  
-   â€“ Full name  
-   â€“ Email  
-   â€“ ACCA reg no. (if any)  
-   â€“ Date of birth  
-   â€“ WhatsApp number  
-   â€“ Exam session (Sept/Dec)  
-3) Weâ€™ll enable one-device LMS access and add you to the SBR Urdu WhatsApp group for doubt-solving.
+Also let me know your preferred lecture language (Urdu/Hindi or English).  
+Once I have this, Iâ€™ll send the precise link and unlock your LMS + WhatsApp access right away.
+User: full FIA bundle
+System: The 7-paper FIA bundle fee varies by locationâ€”e.g., PKR 105,000 in Pakistan or GBP 730 in the UK.  
+Kindly let me know:  
+1) Your country/currency  
+2) Lecture language (Urdu/Hindi or English)  
 
-Ready to proceed or need payment info?
-User: i want to take professional paper and i also had passed 4 papers previously
-System: Sureâ€”just let me know:  
-1) Which Professional paper you want (e.g., SBR, AAA, AFM, APM).  
-2) Your location/currency.
+Iâ€™ll confirm the exact amount and send your payment link, LMS access, and WhatsApp group details.
+User: fee details
+System: Sureâ€”happy to help. Which fee details do you need?  
+â€¢ A single paper (e.g., FFA, F6, SBR)  
+â€¢ The full FIA 7-paper bundle  
+â€¢ Something else?  
 
-Base per-exam fee (before any promo):  
-â€¢ Pakistan PKR 40,000â€ƒâ€¢ UK GBP 267â€ƒâ€¢ India INR 19,000â€ƒâ€¢ Middle East USD 235â€ƒâ€¢ Euro EUR 200â€ƒâ€¢ Bangladesh BDT 17,400â€ƒâ€¢ Nepal NPR 23,350â€ƒâ€¢ Sri Lanka LKR 42,100â€ƒâ€¢ Rest of World USD 235.
+Please also confirm your location/currency so I can quote the exact amount.
+User: FFA
+System: FFA is the same paper as F3 Â­â€“ Financial Accounting.  
 
-A 40 % limited-time promo is active on single Skills & Professional papers, so the payable amount = listed fee Ã— 60 %. (The earlier 1 %-per-paper loyalty offer applies only to FIA, not Professional.)
+Would you like:  
+1) the Hindi-lecture payment link for your chosen exam sitting, or  
+2) fee details for your location?  
 
-Once you confirm the paper and currency, Iâ€™ll send the discounted price, payment options, and LMS-access link.
-User: is any discount available
-System: For FIA the fee is already at the lowest rate, so no general promo is running.  
-However:
+Let me know, and Iâ€™ll send the exact information.Following are messages from recent conversation:
+User: FIA
+System: Sureâ€”just to confirm: do you need  
+1) the full 7-paper FIA bundle fee (NPR 58,500 for Nepal), or  
+2) fee/payment link for a single FIA paper, or  
+3) something else about FIA (syllabus, study plan, etc.)?
 
-â€¢ Loyalty discount â€“ 1 % per FIA paper you previously studied with Mirchawala (max 5 %).  
-â€¢ Other courses: SBR is 40 % off until month-end, and a 10 % flat discount applies if you enrol in any 4-paper Skills/Professional bundle.
+Let me know your choice and preferred lecture language (Urdu/Hindi or English) so I can send the exact details and payment link right away.
+User: FFA is F3 or F7
+System: FFA is the same as F3 (Financial Accounting). F7 is a different paper (Financial Reporting).
+User: i don't understand this shit
+System: No worriesâ€”tell me exactly whatâ€™s confusing, and Iâ€™ll break it down step-by-step. Do you need help with:  
+1) Which F7 link to use (Urdu/Hindi vs English)?  
+2) How to make the payment?  
+3) LMS/WhatsApp access after payment?  
+4) Something else?
 
-Let me know which paper or package you plan to take so I can confirm the exact price after any eligible discount.
-User: any discounts?
-System: We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at
-+923272527513
-Mujtaba AliFollowing are messages from recent conversation:
-User: u haven't applied loyalty discount of 4 papers
-System: The 1 %-per-paper loyalty discount (max 5 %) is only available on new FIA enrollments for papers you have already studied with Mirchawala.  
-Professional papers such as SBR are covered by the separate 40 % promo, and the two offers canâ€™t be combinedâ€”so the SBR fee stays at PKR 24,000.
+Just let me know and Iâ€™ll explain in simple terms.
+User: sep
+System: Greatâ€”September SBR it is!  
+Please pick your lecture language and use the matching UK-payment link (40 % promo applied, total Â£160):
 
-If you are taking an FIA paper and previously completed 4 FIA papers with us, please send the LMS email/ID you used for those classes and Iâ€™ll apply the 4 % loyalty reduction right away.
-User: i want to have lectures in Hindi and i am from srilanka
-System: No problemâ€”Hindi lectures are available.  
+â€¢ Urdu/Hindi: https://admissions.mirchawala.com/?add-to-cart=26404  
+â€¢ English: https://admissions.mirchawala.com/?add-to-cart=26395  
 
-FIA complete-bundle fee for Sri Lanka: LKR 116,000 (one-time admission fee applies if this is your first FIA/ACCA Part 1 enrolment).  
+Checkout with any UK debit/credit card. After payment, share the confirmation screenshot and weâ€™ll activate your LMS access and add you to the September SBR WhatsApp group right away.  
 
-Next steps  
-1) Let me know your exam session (June or September).  
-2) Share these details for LMS setup:  
-   â€¢ Name  
-   â€¢ Email ID  
-   â€¢ ACCA registration number (if any)  
-   â€¢ Date of birth  
-   â€¢ WhatsApp number (+94â€¦)  
-3) Iâ€™ll then send you the LKR payment options (bank transfer/Wise) and the quick-enrolment link.  
+Let me know if you need bank-transfer details instead or have any questions.
+User: uk
+System: Notedâ€”your location is UK.  
+Please let me know:  
+1) Exam sitting: September or December  
+2) Lecture language: Urdu/Hindi or English  
 
-Once payment is verified, Hindi lectures and full LMS access are activated immediately. Just let me know when youâ€™re ready.
-User: i want to know about FiA
-System: Foundations in Accountancy (FIA) at Mirchawala covers 7 papers. The complete-bundle fee is:
-
-â€¢ Pakistan â€“ PKR 105,000  
-â€¢ UK â€“ GBP 730  
-â€¢ Middle East / Rest of World â€“ USD 650  
-â€¢ Euro zone â€“ EUR 530  
-â€¢ India â€“ INR 50,000  
-â€¢ Bangladesh â€“ BDT 47,000  
-â€¢ Nepal â€“ NPR 58,500  
-â€¢ Sri Lanka â€“ LKR 116,000  
-
-If this is your first time enrolling in FIA/ACCA Part 1, an additional one-time admission fee applies (e.g., PKR 10,000 or USD 50, etc.).
-
-Let me know:  
-1) Your preferred currency/location, and  
-2) Whether youâ€™d like Urdu/Hindi or English lectures.
-
-Iâ€™ll then share enrollment links, payment options, and access details.
-User: Hi
-System: Hello! How can I assist you todayâ€”course fees, discounts, enrollment, or LMS access?
-User: dafa ho jao
-System: Theek hai, main ab disturb nahi karunga. Jab kabhi course fee, enrollment, ya LMS access ki zaroorat ho to bas ek text kar dijiyegaâ€”main foran madad kar dunga.
+Once I have these two details, Iâ€™ll send the correct GBP payment link and get your LMS + WhatsApp access activated.
 
 **Relevant Information from Knowledge Base:**  
+The fee for FIA - 7 papers is: Pakistan (PKR) 105,000; UK (GBP) 730; Nepali Continent (NPR) 58,500; Euro (EUR) 530; India (INR) 50,000; Middle East (USD) 650; Bangladesh (BDT) 47,000; Sri Lanka (LKR) 116,000; Rest of the world (USD) 650.
+The 'Knowledge - Per exam' includes FA1, FA2, F3/FFA. Fee for FA1, FA2 is: Pakistan (PKR) 18,000; UK (GBP) 125; Nepali Continent (NPR) 10,000; Euro (EUR) 90; India (INR) 8,500; Middle East (USD) 110; Bangladesh (BDT) 8,000; Sri Lanka (LKR) 20,000; Rest of the world (USD) 110.
+22000 after discount
+The OBU fee is: Pakistan (PKR) 45,000; UK (GBP) 350; Nepali Continent (NPR) 30,000; Euro (EUR) 350; India (INR) 25,000; Middle East (USD) 350; Bangladesh (BDT) 19,500; Sri Lanka (LKR) 47,400; Rest of the world (USD) 350.
+The 'Professional - Per exam' includes SBR (Strategic Business Reporting) fee for Dec'25 and Sep'25 attempts discounts are not included in this fees, it will be applied later:: Pakistan (PKR) 40,000; UK (GBP) 267; Nepali Continent (NPR) 23,350; Euro (EUR) 200; India (INR) 19,000; Middle East (USD) 235; Bangladesh (BDT) 17,400; Sri Lanka (LKR) 42,100; Rest of the world (USD) 235.
+Currently, there's a 40% discount being offered, making the fee 24000 for all services[cite: 270]. For specific pricing based on region and subject, refer to the provided price sheet for June and September attempts, noting that admissions for September and December attempts are open with the same 40% discount on skills and professional papers[cite: 274]. Prices vary by region (e.g., Pakistan, UK, Nepali Continent, India, Middle East, Bangladesh, Sri Lanka, Rest of the World) and subject level (FIA, Knowledge, Skills, Professional, OBU)[cite: 274].
+For local payments only, the official bank account details are: Bank Name: Bank Alfalah, Account Title: Mirchawala Hub of Accountancy, Branch Code: 0016, Account Number: 1007554802, IBAN Number: PK60ALFH0016001007554802, Swift Code: ALFHPKKA. International remittances are not accepted directly into this account[cite: 77, 78, 79, 80, 81, 82, 83, 268].
+The 'Adm fees' are: Pakistan (PKR) 10,000; UK (GBP) 50; Nepali Continent (NPR) 5,000; Euro (EUR) 50; India (INR) 5,000; Middle East (USD) 50; Bangladesh (BDT) 4,500; Sri Lanka (LKR) 10,500; Rest of the world (USD) 50. These admission fees are only applicable on first-time enrollment for FIA and Part 1 ACCA.
+Yes, the fee paid is non-refundable and non-transferable to other subjects[cite: 99, 269]. All terms and conditions regarding enrollment, fees, and LMS access are mentioned on https://mirchawala.com/terms-and-conditions/[cite: 100].
 For Skills and Professional packages, there is a flat discount of 10% for 4 papers.
-The loyalty discount is 1% per paper, with a maximum cap of 5%. This discount is applicable only on past exams studied with MHA and not on current enrollment.
-The provided information does not specify a discount for 5 papers in the Skills and Professional packages. Discounts are listed for 2 papers (5%), 3 papers (7%), and 4 papers (10%).
-The loyalty discount is 1% per paper with a maximum cap of 5%. This discount applies only to past exams studied with MHA and not to current enrollment.
-Walaikum Salam Please provide following details for Lms: Name: Email id: ACCA registration number:  Date of birth: Whatsapp number (with country code): Subject: Language of lectures: Exam session in which you will give exam, after which access to video lectures will expire:  September /December(choose one):
-This is old. Not in 2025 record Ok this is 2024. Kindly read this dear. Best of luck for your studies.
-Let me ask.
-Ask query support
-Send all receipt
-Yes. Make sure to avail it. Before it ends.
 
 **User's Question:**  
-thanks
+2
 

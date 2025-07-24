@@ -13,6 +13,10 @@ from constants import (
     MAX_REFERENCE_CHUNKS
 )
 
+from openai import OpenAI
+from groq import Groq
+import google.generativeai as genai
+
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("milvus_whatsapp")
@@ -43,20 +47,90 @@ def get_safe_chunk_limit_by_model(modelConfig: ModelConfig, num_references: int,
     estimated_available_chunk_limit = usable_tokens // tokens_per_chunk
     return min(estimated_available_chunk_limit, MAX_REFERENCE_CHUNKS), context_token_limit
 
+import time
+
+# In-memory cache for user history
+_history_cache = {}
+_HISTORY_EXPIRY_SECONDS = 3600  # 1 hour expiry for demonstration
+
+def clear_history_cache(user_id=None):
+    """Clear the cache for a specific user or all users."""
+    if user_id:
+        _history_cache.pop(user_id, None)
+    else:
+        _history_cache.clear()
+
+def _get_history(user_id):
+    now = time.time()
+    # Remove expired entries
+    expired = [uid for uid, (h, ts) in _history_cache.items() if now - ts > _HISTORY_EXPIRY_SECONDS]
+    for uid in expired:
+        del _history_cache[uid]
+    # Get or create
+    if user_id in _history_cache:
+        _history_cache[user_id] = (_history_cache[user_id][0], now)  # update timestamp
+        return _history_cache[user_id][0]
+    else:
+        class HistoryState:
+            def __init__(self):
+                self.low_conf_count = 0
+                self.unclear_count = 0
+        h = HistoryState()
+        _history_cache[user_id] = (h, now)
+        return h
+
 def whatsapp_queryLLM(
     query: str,
     num_references: int,
     modelConfig: ModelConfig,
     api_key: str,
+    user_id: str,
     chatHistoryContextSummary: str = "",
     recent_chat_history: str = ""
 ) -> dict:
     logger.info("Starting WhatsApp Q&A retrieval")
     max_chunks = 0
 
+    # --- Step 0: Translate query to English if needed ---
+    from Models.LLM import get_llm_client, LLM
+    llmClient = get_llm_client(modelConfig, api_key)
+    model_id = modelConfig.modelId
+    token_param = (
+        {"max_completion_tokens": modelConfig.maxCompletionTokens}
+        if model_id in [LLM.o3.value, LLM.o3_mini.value]
+        else {"max_tokens": modelConfig.maxCompletionTokens}
+    )
+    translation_prompt = f"""
+You are a translation assistant. Your job is to translate the following WhatsApp message to English if it is not already in English. If the message is already in English, return it as is. Do not add any explanation or extra text. Return only the translated or original message as plain text.
+
+Message:
+{query}
+"""
+    logger.info(f"[PROMPT][TRANSLATE] Sent to LLM:\n{translation_prompt}")
+    if isinstance(llmClient, (OpenAI, Groq)):
+        translation_response = llmClient.chat.completions.create(
+            model=modelConfig.modelId,
+            messages=[{"role": "system", "content": translation_prompt}],
+            temperature=0,
+            response_format="text",
+            **token_param
+        )
+        translated_query = translation_response.choices[0].message.content.strip()
+        logger.info(f"[RAW][TRANSLATE] LLM output:\n{translated_query}")
+    else:
+        translation_response = llmClient.generate_content(translation_prompt,  generation_config=genai.types.GenerationConfig(
+            temperature=0,
+            response_mime_type="text/plain"
+        ))
+        translated_query = translation_response.text.strip()
+        logger.info(f"[RAW][TRANSLATE] LLM output:\n{translated_query}")
+
+    # Use translated_query for combined_query
+    combined_query = chatHistoryContextSummary + "\n" + translated_query if chatHistoryContextSummary else translated_query
+
     try:
         max_chunks = get_safe_chunk_limit_by_model(
-            modelConfig, num_references, reserved_prompt_text=query)
+            modelConfig, num_references, reserved_prompt_text=translated_query)
         if max_chunks == 0:
             return {
                 "status": AppStatusCode.MAX_TOKEN_ERROR.value,
@@ -78,7 +152,6 @@ def whatsapp_queryLLM(
             "answer": "",
             "data": []
         }
-    combined_query = chatHistoryContextSummary + "\n" + query if chatHistoryContextSummary else query
     query_vector = sentence_Transformer.encode(sentences=combined_query, show_progress_bar=False)
 
     # ✅ Use MilvusManager's internal search method (no filter expression)
@@ -98,20 +171,26 @@ def whatsapp_queryLLM(
         num_references=num_references
     )
 
+    history = _get_history(user_id)
     try:
         (status, llm_response) = queryLLM(
             modelConfig=modelConfig,
             api_key=api_key,
-            myQuestion=query,
+            myQuestion=translated_query,
             retrievedKnowledge=aggregated_content,
             recent_chat_history=recent_chat_history,
-            chatHistoryContextSummary = chatHistoryContextSummary
+            chatHistoryContextSummary=chatHistoryContextSummary,
+            history=history
         )
+        # If escalation is triggered, clear the user's history
+        if isinstance(llm_response, str) and "forwarded to a human" in llm_response:
+            clear_history_cache(user_id)
     except Exception as e:
         logger.error(f"queryLLM failed: {e}", exc_info=True)
+        print(e)
         return {
             "status": AppStatusCode.LLM_ERROR.value,
-            "answer": "An error occurred while generating the answer.",
+            "answer": "An error occurred while generating the answer. {e}",
             "data": []
         }
 
@@ -132,9 +211,9 @@ def whatsapp_queryLLM(
 # === STDIN Integration ===
 if __name__ == "__main__":
     try:
-        input_data = sys.stdin.readline().strip()
+        # input_data = sys.stdin.readline().strip()
         # OR test manually:
-        #input_data = """{"user_id":"demo-user","data":{"query":"What is required to join LMS?", "num_of_reference":20,"model":{"modelId":"gemini-2.5-flash","contextWindow":32768,"maxCompletionTokens":8192},"api_key":"AIzaSyChPOCT84gw17qIgKOeZAlAxIlaFV4JQCA"}}"""
+        input_data = """{"user_id":"demo-user","data":{"query":"AslamoAlaikum.kya biryani mil sakti h?", "num_of_reference":20,"model":{"modelId":"gemini-2.5-flash","contextWindow":32768,"maxCompletionTokens":8192},"api_key":"AIzaSyChPOCT84gw17qIgKOeZAlAxIlaFV4JQCA"}}"""
 
         if input_data:
             data = json.loads(input_data)
@@ -147,6 +226,7 @@ if __name__ == "__main__":
             recent_chat_history = data_payload.get("recent_chat_history", "")
 
             model_dict = data_payload.get("model")
+            user_id = data.get("user_id", "default-user")
             if model_dict and isinstance(model_dict, dict):
                 model = ModelConfig(
                     modelId=model_dict.get("modelId"),
@@ -159,6 +239,7 @@ if __name__ == "__main__":
                     num_references=num_references,
                     modelConfig=model,
                     api_key=api_key,
+                    user_id=user_id,
                     chatHistoryContextSummary=chatHistoryContextSummary,
                     recent_chat_history=recent_chat_history
                 )

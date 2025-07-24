@@ -100,3 +100,6 @@ microservices/logs/
 # Data files
 processed_chats.json
 # qa_pairs_complete.json
+
+# Virtual environment
+venv/

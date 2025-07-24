@@ -596,7 +596,7 @@ app.post('/webhook', async (req, res) => {
                     // chatHistoryContextSummary = generateSummary.data.response ?? ""
 
                     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-                        model: 'gpt-4o', // or 'gpt-3.5-turbo' if you prefer
+                        model: 'gpt-4o-mini', // or 'gpt-3.5-turbo' if you prefer
                         messages: [
                             { role: 'system', content: queryBasedSystemPrompt }
                         ],
@@ -677,40 +677,40 @@ app.post('/webhook', async (req, res) => {
                             whatsappReplyMessageId: whatsappReplyMessageId,
                             timestamp: new Date()
                         };
+                        // INFO: Don't send AudioMessage to anyone (by Dr. Mukhtiar on 24/07/2025)
+                        // if (message.type === 'audio') {
+                        //     const outputAudioFilename = path.join(__dirname, 'output_audio_' + Date.now() + '.mp3');
+                        //     const ttsProcess = spawn('python', [path.join(__dirname, 'src/p5_textToSpeech_audio.py'), answer, outputAudioFilename]);
+                        //     let ttsOutput = '';
+                        //     ttsProcess.stdout.on('data', (data) => {
+                        //         ttsOutput += data.toString().trim();
+                        //     });
+                        //     ttsProcess.stderr.on('data', (data) => {
+                        //         console.error(`TTS script error: ${data}`);
+                        //     });
 
-                        if (message.type === 'audio') {
-                            const outputAudioFilename = path.join(__dirname, 'output_audio_' + Date.now() + '.mp3');
-                            const ttsProcess = spawn('python', [path.join(__dirname, 'src/p5_textToSpeech_audio.py'), answer, outputAudioFilename]);
-                            let ttsOutput = '';
-                            ttsProcess.stdout.on('data', (data) => {
-                                ttsOutput += data.toString().trim();
-                            });
-                            ttsProcess.stderr.on('data', (data) => {
-                                console.error(`TTS script error: ${data}`);
-                            });
-
-                            ttsProcess.on('close', async (ttsCode) => {
-                                if (ttsCode !== 0) {
-                                    console.error(`TTS script exited with code ${ttsCode}`);
-                                    await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
-                                } else {
-                                    console.log(`TTS output file: ${ttsOutput}`);
-                                    whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput);
-                                    chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
-                                    await saveChatHistory(chatRecord);
-                                    await checkAndSendKeywordImage(queryText, from);
-                                    fs.unlink(outputAudioFilename, (err) => {
-                                        if (err) console.error(`Error deleting generated audio file: ${err}`);
-                                        else console.log(`Deleted generated audio file: ${outputAudioFilename}`);
-                                    });
-                                }
-                            });
-                        } else {
+                        //     ttsProcess.on('close', async (ttsCode) => {
+                        //         if (ttsCode !== 0) {
+                        //             console.error(`TTS script exited with code ${ttsCode}`);
+                        //             await sendTextMessage(from, "We are here to assist you with course details, fees, discounts, and enrollment information.If your query is about something else, please contact our support team at\n+923272527513\nMujtaba Ali");
+                        //         } else {
+                        //             console.log(`TTS output file: ${ttsOutput}`);
+                        //             whatsappReplyMessageId = await sendAudioMessage(from, ttsOutput);
+                        //             chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
+                        //             await saveChatHistory(chatRecord);
+                        //             await checkAndSendKeywordImage(queryText, from);
+                        //             fs.unlink(outputAudioFilename, (err) => {
+                        //                 if (err) console.error(`Error deleting generated audio file: ${err}`);
+                        //                 else console.log(`Deleted generated audio file: ${outputAudioFilename}`);
+                        //             });
+                        //         }
+                        //     });
+                        // } else {
                             whatsappReplyMessageId = await sendTextMessage(from, answer);
                             chatRecord.whatsappReplyMessageId = whatsappReplyMessageId;
                             await saveChatHistory(chatRecord);
                             await checkAndSendKeywordImage(queryText, from);
-                        }
+                      //  }
 
                     } catch (error) {
                         console.error('Failed to process Milvus response or send reply:', error.response ? error.response.data : error.message);

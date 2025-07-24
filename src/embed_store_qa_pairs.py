@@ -30,7 +30,7 @@ COLLECTION_NAME = "whatsapp_data"
 VECTOR_DIM = 384
 
 # --- Load Q&A Pairs ---
-with open("E:\EyraTechProjects\whatsapp-webhook-server\qa_pairs_complete.json", "r", encoding="utf-8") as f:
+with open("E:/EyraTechProjects/whatsapp-webhook-server/qa_pairs_complete.json", "r", encoding="utf-8") as f:
     qa_pairs = json.load(f)
 
 # --- Step 1: Connect to Milvus ---
